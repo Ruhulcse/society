@@ -1,0 +1,38 @@
+import React from 'react'
+import logo from "../assets/img/logo.png";
+function Head() {
+    return (
+        <div className="container-fluid bg">
+         <nav className="navbar navbar-expand-md navbar-light ">
+            <div>
+            <a className="navbar-brand" href="/">
+                <img src={logo} style={{height:"100px"}} alt />
+            </a>
+            </div>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse ml-2" id="navbarCollapse">
+                <div className="navbar-nav ml-auto">
+                    <a href="#event" className="nav-item nav-link "><span className="navitem">Home</span></a>
+                    <a href="#client" className="nav-item nav-link"><span className="navitem">Services</span></a>
+                    <a href="#client" className="nav-item nav-link"><span className="navitem">Project</span></a>
+                    <a href="#contact" className="nav-item nav-link"><span className="navitem">Contact us</span></a>
+                    <a href="#client" className="nav-item nav-link"><span className="navitem">Sign in</span></a>
+                    <a href="#client" className="nav-item nav-link"><span className="navitem">Sign up</span></a>
+                </div>
+            </div>
+         </nav>
+         <div className="row mt-5">
+             <div className="col-md-6">
+                 <h1>hello</h1>
+             </div>
+             <div className="col-md-6">
+                 <h1>log will be here</h1>
+             </div>
+         </div>
+        </div>
+    )
+}
+
+export default Head
