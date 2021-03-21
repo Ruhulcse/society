@@ -25,7 +25,16 @@ function Head() {
          </nav>
          <div className="row mt-5">
              <div className="col-md-6">
-                 <h1>hello</h1>
+                 <div className="slogan">
+                     <h1 className="brand">
+                     <span className="">You </span>
+                     <span className="redFont">Think It</span>
+                     </h1>
+                     <h1 className="brand">We Build it</h1>
+                     <p>Do you have an idea..</p>
+                     <p>But doesn't know how to build it</p>
+                     <button className="bt">Learn More</button>
+                 </div>
              </div>
              <div className="col-md-6">
                  <h1>log will be here</h1>

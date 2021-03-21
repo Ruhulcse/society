@@ -17,6 +17,18 @@
     text-decoration-color: red;
     text-underline-position: under;
 }
+.slogan{
+ color: white;
+ padding-left: 20%;
+ font-family: 'Poppins';
+}
+.redFont{
+    color: red;
+}
+.brand{
+    font-size: 400%;
+}
+
 /* about us design */
 .about{
     padding-top: 20%;
