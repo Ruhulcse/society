@@ -6,7 +6,7 @@ function Head() {
          <nav className="navbar navbar-expand-md navbar-light ">
             <div>
             <a className="navbar-brand" href="/">
-                <img src={logo} style={{height:"100px"}} alt />
+                <img src={logo} style={{height:"100px"}} alt="not found" />
             </a>
             </div>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
