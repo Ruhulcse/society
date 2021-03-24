@@ -83,8 +83,25 @@
 .box{
     background: white;
     margin: 2%;
-    border-radius: 26%;
+    clip-path: polygon(
+        0 10%,
+        10% 0,
+        90% 0,
+        100% 10%,
+        100% 90%,
+        90% 100%,
+        10% 100%,
+        0% 90%,
+        0% 10%
+    );
 }
+.box::after {
+    right: 0;
+    border-top: 10px solid lightpink;
+    border-right: 10px solid white;
+    border-left: 10px solid lightpink;
+    border-bottom: 10px solid white;
+  }
 .service-head{
     margin: auto;
     width: 50%;
@@ -100,3 +117,31 @@
     height: 50px;
     width: 50px;
 }
+
+.hexagon {
+    position: relative;
+    width: 300px; 
+    height: 173.21px;
+    background-color: #64C7CC;
+    margin: 86.60px 0;
+  }
+  
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+  }
+  
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 86.60px solid #64C7CC;
+  }
+  
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 86.60px solid #64C7CC;
+  }
