@@ -1,8 +1,29 @@
-import React from 'react'
+import React ,{useContext}from 'react'
+import {LanguageContext} from "../context/language"
 import logo from "../assets/img/logo.png";
 function Head() {
+    const{english,en,ar} = useContext(LanguageContext);
+
+    const nav =english?{
+        home:"Home",
+        service: "Service",
+        project: "Project",
+        contact: "Contact us",
+        signin: "Sign in",
+        signup: "Sign up",
+    }:{
+        home: "الصفحة الرئيسية",
+        service: "الخدمات",
+        project: "المشروع",
+        contact: "اتصل بنا",
+        signin: "تسجيل الدخول",
+        signup: "اشتراك",
+    };
+  
     return (
         <div className="container-fluid bg">
+             <button onClick={en}>english</button>
+             <button onClick={ar}>arabic</button>
          <nav className="navbar navbar-expand-md navbar-light ">
             <div>
             <a className="navbar-brand" href="/">
@@ -14,12 +35,12 @@ function Head() {
             </button>
             <div className="collapse navbar-collapse ml-2" id="navbarCollapse">
                 <div className="navbar-nav ml-auto">
-                    <a href="#event" className="nav-item nav-link "><span className="navitem">Home</span></a>
-                    <a href="#client" className="nav-item nav-link"><span className="navitem">Services</span></a>
-                    <a href="#client" className="nav-item nav-link"><span className="navitem">Project</span></a>
-                    <a href="#contact" className="nav-item nav-link"><span className="navitem">Contact us</span></a>
-                    <a href="#client" className="nav-item nav-link"><span className="navitem">Sign in</span></a>
-                    <a href="#client" className="nav-item nav-link"><span className="navitem">Sign up</span></a>
+                    <a href="#event" className="nav-item nav-link "><span className="navitem">{nav.home}</span></a>
+                    <a href="#client" className="nav-item nav-link"><span className="navitem">{nav.service}</span></a>
+                    <a href="#client" className="nav-item nav-link"><span className="navitem">{nav.project}</span></a>
+                    <a href="#contact" className="nav-item nav-link"><span className="navitem">{nav.contact}</span></a>
+                    <a href="#client" className="nav-item nav-link"><span className="navitem">{nav.signin}</span></a>
+                    <a href="#client" className="nav-item nav-link"><span className="navitem">{nav.signup}</span></a>
                 </div>
             </div>
          </nav>

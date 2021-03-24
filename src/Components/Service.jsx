@@ -1,6 +1,8 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import {LanguageContext} from "../context/language"
 import icon from "../assets/img/icon.svg";
 function Service() {
+   const{english} = useContext(LanguageContext);
     return (
         <div class="card sbg">
         <div class="card-body box">
