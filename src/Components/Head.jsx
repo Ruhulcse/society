@@ -1,6 +1,7 @@
 import React ,{useContext}from 'react'
 import {LanguageContext} from "../context/language"
 import logo from "../assets/img/logo.png";
+import coolDesign  from "../assets/img/Cool Design.png";
 function Head() {
     const{english,en,ar} = useContext(LanguageContext);
 
@@ -44,7 +45,7 @@ function Head() {
                 </div>
             </div>
          </nav>
-         <div className="row mt-5">
+         <div className="d-flex mt-5">
              <div className="col-md-6">
                  <div className="slogan">
                      <h1 className="brand">
@@ -58,7 +59,7 @@ function Head() {
                  </div>
              </div>
              <div className="col-md-6">
-                 <h1>log will be here</h1>
+               <img src={coolDesign}  className="img-fluid" alt="not found"/>
              </div>
          </div>
         </div>
