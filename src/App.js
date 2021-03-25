@@ -1,5 +1,6 @@
 import './App.css';
 import About from './Components/About';
+import ContactUs from './Components/ContactUs';
 import Footer from './Components/Footer';
 import Head from './Components/Head';
 import Service from './Components/Service';
@@ -13,6 +14,7 @@ function App() {
 			<About />
 			<Service />
 			<Work />
+			<ContactUs />
 			<Footer />
 		</LanguageContextProvider>
 	);
