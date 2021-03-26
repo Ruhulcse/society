@@ -10,12 +10,54 @@ function Work() {
             <div className="d-flex justify-content-center">
                <p>simple process at which you can make your ideas possible with 3 easy steps</p>
             </div>
-            <div className="row">
-                <div className="col-md-4 pl-5">
-                    <h1>hello</h1>
+            <div className="row pb-5 pt-5">
+                <div className="col-md-4 " style={{paddingLeft:"5%",paddingTop:"4%"}}>
+                 <div className="row">
+                   <p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#oneExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        1
+                    </a>
+                    Sent Your Idea
+                    </p>
+                    <div class="collapse" id="oneExample">
+                    <div class="card card-body">
+                       once we recive your idea proposal,our team will start developing your based on the client desire
+                    </div>
+                    </div>
+                 </div>
+                 <div className="row">
+                   <p>
+                     <a class="btn btn-primary" data-toggle="collapse" href="#twoExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        2
+                    </a>
+                    Monitor
+                    </p>
+                    <div class="collapse" id="twoExample">
+                    <div class="card card-body">
+                       once we recive your idea proposal,our team will start developing your based on the client desire
+                    </div>
+                    </div>
+                 </div>
+                 <div className="row">
+                   <p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#threeExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        3
+                    </a>
+                    Complete
+                    </p>
+                    <div class="collapse" id="threeExample">
+                    <div class="card card-body">
+                       once we recive your idea proposal,our team will start developing your based on the client desire
+                    </div>
+                    </div>
+                 </div>
                 </div>
-                <div className="col-md-8">
-                    <h1>hello</h1>
+                <div className="col-md-8 pl-5" style={{paddingRight:"8%"}}>
+                    <div className="video_box">
+                    <div class="videoWrapper">
+                      <iframe width="560" height="349" src="https://www.youtube.com/embed/6tkaatkbC2Y" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>

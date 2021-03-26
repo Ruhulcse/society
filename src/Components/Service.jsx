@@ -1,9 +1,14 @@
 import React,{useContext} from 'react'
 import {LanguageContext} from "../context/language"
-import icon from "../assets/img/icon.svg";
+import web from "../assets/img/icon.png";
+import apps from "../assets/img/icon-2.png";
+import hosting from "../assets/img/Group 283.png";
+import ux from "../assets/img/icon-1.png";
+import seo from "../assets/img/icon-3.png"; 
+import graphics from "../assets/img/Op component 1.png";
 function Service() {
    const{english} = useContext(LanguageContext);
-    return (
+    return (  
         <div class="card sbg">
         <div class="card-body box">
             <div className="container">
@@ -11,13 +16,18 @@ function Service() {
                    <h1>Our Services</h1>
                </div>
                <div className="d-flex justify-content-center">
-                 <p className="text-center m-1">We are the best on the market & we can prove with more than just words, check our projects below</p>
+                 <p className="text-center m-1">We are the best on the market & we can prove with more than just words,</p>
+               </div>
+               <div className="d-flex justify-content-center">
+                 <p className="text-center">check our projects below</p>
                </div>
                <div className="row pt-5">
                 <div class="col-sm-6 col-md-4 col-lg-4">
                  <div className="d-flex justify-content-center">
+                    <div>
                     <div className="square">
-                     <img src={icon} className="img-fluid" alt="not found"/>
+                     <img src={web} className="img-fluid" alt="not found"/>
+                    </div>
                     </div>
                  </div>
                  <div className="d-flex justify-content-center">
@@ -30,7 +40,7 @@ function Service() {
                 <div class="col-sm-6 col-md-4 col-lg-4">
                  <div className="d-flex justify-content-center">
                     <div className="square">
-                      <img src={icon} className="img-fluid" alt="not found"/>
+                      <img src={apps} className="img-fluid" alt="not found"/>
                     </div>
                  </div>
                  <div className="d-flex justify-content-center">
@@ -43,7 +53,7 @@ function Service() {
                 <div class="col-sm-6 col-md-4 col-lg-4">
                  <div className="d-flex justify-content-center">
                     <div className="square">
-                        <img src={icon} className="img-fluid" alt="not found"/>
+                        <img src={hosting} className="img-fluid" alt="not found"/>
                     </div>
                  </div>
                  <div className="d-flex justify-content-center">
@@ -58,7 +68,7 @@ function Service() {
                <div class="col-sm-6 col-md-4 col-lg-4">
                  <div className="d-flex justify-content-center">
                     <div className="square">
-                     <img src={icon} className="img-fluid" alt="not found"/>
+                     <img src={ux} className="img-fluid" alt="not found"/>
                     </div>
                  </div>
                  <div className="d-flex justify-content-center">
@@ -71,7 +81,7 @@ function Service() {
                 <div class="col-sm-6 col-md-4 col-lg-4">
                  <div className="d-flex justify-content-center">
                     <div className="square">
-                     <img src={icon} className="img-fluid" alt="not found"/>
+                     <img src={seo} className="img-fluid" alt="not found"/>
                     </div>
                  </div>
                  <div className="d-flex justify-content-center">
@@ -84,7 +94,7 @@ function Service() {
                 <div class="col-sm-6 col-md-4 col-lg-4">
                  <div className="d-flex justify-content-center">
                     <div className="square">
-                      <img src={icon} className="img-fluid" alt="not found"/>
+                      <img src={graphics} className="img-fluid" alt="not found"/>
                     </div>
                  </div>
                  <div className="d-flex justify-content-center">
