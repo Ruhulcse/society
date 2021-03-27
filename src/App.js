@@ -6,6 +6,7 @@ import Service from "./Components/Service";
 import Contact from "./Components/ContactUs";
 import Work from "./Components/Work";
 import Choose from "./Components/Choose";
+import LatestProject from "./Components/LatestProject";
 import { LanguageContextProvider } from "./context/language";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Service />
       <Work />
       <Choose />
+      <LatestProject />
       <Contact />
       <Footer />
     </LanguageContextProvider>
