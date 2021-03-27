@@ -3,8 +3,9 @@ import About from "./Components/About";
 import Footer from "./Components/Footer";
 import Head from "./Components/Head";
 import Service from "./Components/Service";
-import Contact from "./Components/ContactUs"
+import Contact from "./Components/ContactUs";
 import Work from "./Components/Work";
+import Choose from "./Components/Choose";
 import { LanguageContextProvider } from "./context/language";
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <About />
       <Service />
       <Work />
-	  <Contact/>
+      <Choose />
+      <Contact />
       <Footer />
     </LanguageContextProvider>
   );
