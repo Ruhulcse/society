@@ -159,6 +159,13 @@
 	padding: 5%;
 	width: 100%;
 	height: 100%;
+  }
+/*Choose Section */
+.cbg{
+	background-image: linear-gradient(to right,#b02f34,#452a2c);
+}
+.txtc{
+	color: white;
 }
 /* Footer Style */
 .footer-bg {
