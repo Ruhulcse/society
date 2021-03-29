@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import project1 from "../assets/img/project1.png";
+import project2 from "../assets/img/project1.png";
 function LatestProject() {
     const [ourProject,setOurProject] = useState(true);
 
@@ -31,18 +32,31 @@ function LatestProject() {
             <div className="row pt-5 pl-5 pr-5">
                 <div className="col-md-3">
                  <img src={project1}  className="img-fluid" alt="not found"/>
-                 <div>
-                     hello
-                 </div>
+                 <div class="text-block">
+                    <h4 className="text-center">Troopers</h4>
+                    <p>Check Project</p>
                 </div>
-                <div className="col-md-3">
-                <img src={project1}  className="img-fluid" alt="not found"/>
                 </div>
-                <div className="col-md-3">
-                <img src={project1}  className="img-fluid" alt="not found"/>
+                <div className="col-md-3 pbox">
+                <img src={project2}  className="img-fluid" alt="not found"/>
+                <div class="text-block">
+                    <h4>Nature</h4>
+                    <p>What a beautiful sunrise</p>
                 </div>
-                <div className="col-md-3">
+                </div>
+                <div className="col-md-3 pbox">
                 <img src={project1}  className="img-fluid" alt="not found"/>
+                <div class="text-block">
+                    <h4>Nature</h4>
+                    <p>What a beautiful sunrise</p>
+                </div>
+                </div>
+                <div className="col-md-3 pbox">
+                <img src={project2}  className="img-fluid" alt="not found"/>
+                <div class="text-block">
+                    <h4>Nature</h4>
+                    <p>What a beautiful sunrise</p>
+                </div>
                 </div>
             </div>
         </div>
