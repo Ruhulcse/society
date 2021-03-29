@@ -1,12 +1,12 @@
 import "./App.css";
 import About from "./Components/About";
+import ContactUs from "./Components/ContactUs";
 import Footer from "./Components/Footer";
 import Head from "./Components/Head";
-import Service from "./Components/Service";
-import Contact from "./Components/ContactUs";
-import Work from "./Components/Work";
-import Choose from "./Components/Choose";
+import LatestNews from "./Components/LatestNews";
 import LatestProject from "./Components/LatestProject";
+import Service from "./Components/Service";
+import Work from "./Components/Work";
 import { LanguageContextProvider } from "./context/language";
 
 function App() {
@@ -16,9 +16,9 @@ function App() {
       <About />
       <Service />
       <Work />
-      <Choose />
       <LatestProject />
-      <Contact />
+      <LatestNews />
+      <ContactUs />
       <Footer />
     </LanguageContextProvider>
   );

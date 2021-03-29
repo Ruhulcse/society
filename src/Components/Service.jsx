@@ -99,7 +99,7 @@ function Service() {
                  </div>
                  <div className="d-flex justify-content-center">
                    <h4 className="pt-4">Motion Graphic</h4>
-                 </div>
+                 </div> 
                  <div className="d-flex justify-content-center">
                     <p className="text-center m-1">blah blah blah blah blah blah blah blahblah blah blah blah</p>
                  </div>
