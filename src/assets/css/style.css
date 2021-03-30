@@ -466,3 +466,62 @@ small {
 .news-card .news-content .read-more:hover {
 	transform: scale(1.1);
 }
+
+/* Login Page */
+
+.login-page {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	background-image: url(../img/bg-lines.png), url(../img/login-bg.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-page .login-form {
+	background: linear-gradient(135deg, #583c3d, #8e2323);
+	color: #fff;
+	border-bottom: 1px solid #000;
+	padding: 0 40px;
+	border-radius: 30px;
+}
+
+.MuiInputBase-input {
+	color: #fff !important;
+}
+
+.MuiInput-underline:after {
+	border-bottom: 2px solid #ffffff !important;
+}
+
+.MuiFormLabel-root {
+	color: #fff !important;
+}
+
+.MuiInput-underline:before {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.42) !important;
+}
+
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+	border-bottom: 2px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.makeStyles-submit-3.create-btn {
+	background: #f73c45;
+	border-radius: 48px;
+	box-shadow: 1px 1px 7px #f73c45;
+	color: #fff;
+	font-size: 15px;
+	padding: 10px 50px;
+	border: solid #f83c45 1px;
+	text-decoration: none;
+	transition: 0.3s;
+}
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.makeStyles-submit-3.create-btn:hover {
+	transform: scale(0.96);
+}
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.makeStyles-submit-3.create-btn:focus {
+	outline: 0;
+}
