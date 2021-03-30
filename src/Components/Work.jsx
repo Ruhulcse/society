@@ -2,7 +2,7 @@ import React from 'react'
 
 function Work() {
     return (
-        <div className="container-fluid">
+        <div className="container-fluid" style={{marginBottom:"8%"}}>
             <div className="row pt-3"></div>
             <div className="d-flex justify-content-center pt-5">
                 <h1>How We Work</h1>
