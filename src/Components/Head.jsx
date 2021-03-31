@@ -44,15 +44,15 @@ function Head() {
                         <a href="#contact" className="pl-5 nav-item nav-link"> <section className="navitem">{nav.contact}</section></a>
                     </div>
                     <div className="col-md-3 navbar-nav ml-auto">
-                       <a href="#client" className="nav-item nav-link"  ><span className="navitem pr-5">{nav.signin}</span></a>
-                        <a href="#client" className="nav-item nav-link border" ><span className="navitem" style={{marginLeft:"10px",marginRight:"10px"}}>{nav.signup}</span></a>
+                       <a href="/signup" className="nav-item nav-link"  ><span className="navitem pr-5">{nav.signin}</span></a>
+                        <a href="/login" className="nav-item nav-link border" ><span className="navitem" style={{marginLeft:"10px",marginRight:"10px"}}>{nav.signup}</span></a>
                     </div>
                 </div>
              </nav>
              </div>
          </div>
          <div className="d-flex mt-5 pt-5">
-             <div className="col-md-6">
+             <div className="col-md-12">
                  <div className="slogan">
                      <h1 className="brand">
                      <span className="">You </span>
