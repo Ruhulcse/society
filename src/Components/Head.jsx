@@ -26,7 +26,7 @@ function Head() {
          <div className="row pt-5">
              <div className="col-md-3">
                 <div>
-                    <a className="navbar-brand" style={{paddingLeft:"32%",paddingTop:"8%"}} href="/">
+                    <a className="navbar-brand" style={{paddingLeft:"32%",paddingTop:"4%"}} href="/">
                         <img src={logo}  className="img-fluid"  alt="not found" />
                     </a>
                 </div>
@@ -58,9 +58,9 @@ function Head() {
                      <span className="">You </span>
                      <span className="redFont">Think It</span>
                      </h1>
-                     <h1 className="brand">We Build it</h1>
-                     <p>Do you have an idea..</p>
-                     <p>But doesn't know how to build it</p>
+                     <h1 className="brand">We Build It</h1>
+                     <p className="pstyle">Do you have an idea..</p>
+                     <p className="pstyle">But doesn't know how to build it</p>
                      <button className="bt">Learn More</button>
                  </div>
              </div>
