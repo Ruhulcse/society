@@ -3,6 +3,8 @@ import About from './Components/About';
 import ContactUs from './Components/ContactUs';
 import Footer from './Components/Footer';
 import Head from './Components/Head';
+import LatestProject from './Components/LatestProject';
+import Choose from './Components/Choose'
 import LatestNews from './Components/LatestNews';
 import Service from './Components/Service';
 import Signup from './Components/Signup';
@@ -16,10 +18,11 @@ function App() {
 			<About />
 			<Service />
 			<Work />
+      <Choose/>
+      <LatestProject/>
 			<LatestNews />
 			<ContactUs />
 			<Footer />
-
 			<Signup />
 		</LanguageContextProvider>
 	);

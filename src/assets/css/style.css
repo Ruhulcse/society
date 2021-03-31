@@ -7,8 +7,10 @@
 }
 .navitem {
 	color: #898285;
+	font-size: 27px;
 }
 .navitem:hover {
+	color: white;
 	text-decoration: underline;
 	text-decoration-color: red;
 	text-underline-position: under;
