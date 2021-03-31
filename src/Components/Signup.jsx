@@ -37,9 +37,9 @@ function Signup() {
   }
 
   return (
-      <div className="login-page">
+      <div className="signin-page">
 
-    <Container className="login-form" component="main" maxWidth="xs">
+    <Container className="signin-form" component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         
