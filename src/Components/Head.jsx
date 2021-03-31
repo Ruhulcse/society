@@ -24,34 +24,34 @@ function Head() {
     return (
         <div className="container-fluid bg">
          <div className="row pt-5">
-             <div className="col-md-2">
+             <div className="col-md-3">
                 <div>
-                    <a className="navbar-brand" href="/">
+                    <a className="navbar-brand" style={{paddingLeft:"32%",paddingTop:"8%"}} href="/">
                         <img src={logo}  className="img-fluid"  alt="not found" />
                     </a>
                 </div>
              </div>
-             <div className="col-md-10">
+             <div className="col-md-9">
              <nav className="navbar navbar-expand-md navbar-light ">
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse ml-2" id="navbarCollapse">
-                    <div className="col-md-9 navbar-nav ml-auto" style={{paddingLeft:"15%"}}>
+                    <div className="col-md-9 navbar-nav ml-auto" style={{paddingLeft:"3%"}}>
                         <a href="#event" className="pl-5 nav-item nav-link "> <section className="navitem">{nav.home}</section></a>
                         <a href="#client" className="pl-5 nav-item nav-link"> <section className="navitem">{nav.service}</section></a>
                         <a href="#client" className="pl-5 nav-item nav-link"> <section className="navitem">{nav.project}</section></a>
                         <a href="#contact" className="pl-5 nav-item nav-link"> <section className="navitem">{nav.contact}</section></a>
                     </div>
                     <div className="col-md-3 navbar-nav ml-auto">
-                       <a href="#client" className="nav-item nav-link"  ><span className="navitem">{nav.signin}</span></a>
-                        <a href="#client" className="nav-item nav-link" ><span className="navitem">{nav.signup}</span></a>
+                       <a href="#client" className="nav-item nav-link"  ><span className="navitem pr-5">{nav.signin}</span></a>
+                        <a href="#client" className="nav-item nav-link border" ><span className="navitem" style={{marginLeft:"10px",marginRight:"10px"}}>{nav.signup}</span></a>
                     </div>
                 </div>
              </nav>
              </div>
          </div>
-         {/* <div className="d-flex mt-5">
+         <div className="d-flex mt-5 pt-5">
              <div className="col-md-6">
                  <div className="slogan">
                      <h1 className="brand">
@@ -64,10 +64,7 @@ function Head() {
                      <button className="bt">Learn More</button>
                  </div>
              </div>
-             <div className="col-md-6">
-               <img src={coolDesign}  className="img-fluid" alt="not found"/>
-             </div>
-         </div> */}
+         </div>
         </div>
     )
 }

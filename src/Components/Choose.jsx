@@ -6,12 +6,13 @@ import headset from "../assets/img/headset.png";
 import research from "../assets/img/research.png";
 import surface from "../assets/img/surface1.png";
 import awareness from "../assets/img/awareness.png"
+import path from "../assets/img/Path 401.png"
 function Choose() {
     return (
         <div className="container-fluid cbg">
             <div className="row" style={{paddingTop: "5%",paddingBottom: "5%"}}>
                 <div className="col-md-2">
-                    {/* <h1>Logo missing</h1> */}
+                  <img src={path} className="img-fluid" alt="not found"/>
                 </div>
                 <div className="col-md-6">
                     <h1>
