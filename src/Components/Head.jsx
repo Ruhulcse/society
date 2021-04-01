@@ -61,7 +61,8 @@ function Head() {
                      <h1 className="brand">We Build It</h1>
                      <p className="pstyle">Do you have an idea..</p>
                      <p className="pstyle">But doesn't know how to build it</p>
-                     <button className="bt">Learn More</button>
+                     <br></br>
+                     <button className="btntop">Learn More</button>
                  </div>
              </div>
          </div>
