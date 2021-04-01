@@ -10,7 +10,7 @@ import Service from './Service';
 import Work from './Work';
 function Landing() {
     return (
-        <div>
+        <>
             <Head/>
             <About/>
             <Service/>
@@ -19,8 +19,8 @@ function Landing() {
             <LatestProject/>
             <LatestNews/>
             <ContactUs/>
-            <Footer/>
-        </div>
+            {/* <Footer/> */}
+        </>
     )
 }
 

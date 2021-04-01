@@ -12,7 +12,7 @@ function Work() {
             </div>
             <div className="row pb-5 pt-5">
                 <div className="col-md-4 " style={{paddingLeft:"5%",paddingTop:"4%"}}>
-                 <div className="row">
+                 <div className="">
                    <p>
                     <a class="btn abtn" data-toggle="collapse" href="#oneExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         1
@@ -25,7 +25,7 @@ function Work() {
                     </div>
                     </div>
                  </div>
-                 <div className="row">
+                 <div className="">
                    <p>
                      <a class="btn abtn" data-toggle="collapse" href="#twoExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         2
@@ -38,7 +38,7 @@ function Work() {
                     </div>
                     </div>
                  </div>
-                 <div className="row">
+                 <div className="">
                    <p>
                     <a class="btn abtn" data-toggle="collapse" href="#threeExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         3

@@ -5,7 +5,7 @@ function LatestProject() {
     const [ourProject,setOurProject] = useState(true);
 
     return (
-        <div className="container-fluid sbg">
+        <div className="container-fluid">
             <div className="row pt-5"></div>
             <div className="d-flex justify-content-center pt-5">
                 <h2>Our Latest Project</h2>
@@ -29,7 +29,7 @@ function LatestProject() {
                     <hr></hr>
                 </div>
             </div>
-            <div className="row pt-5 pl-5 pr-5">
+            <div className="row pt-5 pl-5 pr-5" style={{paddingBottom:"10%",marginTop: "2%"}}>
                 <div className="col-md-3">
                  <img src={project1}  className="img-fluid" alt="not found"/>
                  <div class="firstpic">
