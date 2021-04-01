@@ -14,10 +14,10 @@ function Work() {
                 <div className="col-md-4 " style={{paddingLeft:"5%",paddingTop:"4%"}}>
                  <div className="row">
                    <p>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#oneExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <a class="btn abtn" data-toggle="collapse" href="#oneExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         1
                     </a>
-                    Sent Your Idea
+                    <span className="sp"> Sent Your Idea</span>
                     </p>
                     <div class="collapse" id="oneExample">
                     <div class="card card-body">
@@ -27,10 +27,10 @@ function Work() {
                  </div>
                  <div className="row">
                    <p>
-                     <a class="btn btn-primary" data-toggle="collapse" href="#twoExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <a class="btn abtn" data-toggle="collapse" href="#twoExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         2
                     </a>
-                    Monitor
+                   <span className="sp"> Monitor</span>
                     </p>
                     <div class="collapse" id="twoExample">
                     <div class="card card-body">
@@ -40,10 +40,10 @@ function Work() {
                  </div>
                  <div className="row">
                    <p>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#threeExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <a class="btn abtn" data-toggle="collapse" href="#threeExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         3
                     </a>
-                    Complete
+                    <span className="sp">Complete</span>
                     </p>
                     <div class="collapse" id="threeExample">
                     <div class="card card-body">

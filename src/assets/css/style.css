@@ -195,6 +195,15 @@
 	width: 100%;
 	height: 100%;
   }
+  .abtn{
+	color: white;
+    background: #1555ef;
+  }
+  .sp{
+	color: black !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+  }
 /*Choose Section */
 .cbg{
 	background-image: linear-gradient(to right,#b02f34,#452a2c);
@@ -204,13 +213,13 @@
 }
 /*project section*/
 .text-block {
-    position: absolute;
+	position: absolute;
     bottom: 7%;
-    right: 11%;
+    right: -2%;
     background-image: linear-gradient(to right,#452a2c,#b02f34);
     color: white;
-    padding-left: 3%;
-    padding-right: 6%;
+    padding-left: 13%;
+    padding-right: 8%;
   }
 /* Footer Style */
 .footer-bg {
@@ -669,4 +678,23 @@ label.MuiFormControlLabel-root {
 .login-page .login-form .log_sign_in-btn .login-btn:focus,
 .login-page .login-form .log_sign_in-btn .signin-btn:focus {
 	outline: none;
+}
+
+/*.latest project*/
+.sc{
+	color: #000;
+    border-color: #a72828;
+}
+.firstpic{
+	position: absolute;
+    bottom: 7%;
+    right: 11%;
+    background-image: linear-gradient(to right,#452a2c,#b02f34);
+    color: white;
+    padding-left: 10%;
+    padding-right: 11%;
+}
+.firstlink{
+	color: white;
+    text-decoration: none;
 }
