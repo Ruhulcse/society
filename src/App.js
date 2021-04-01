@@ -8,6 +8,8 @@ import Head from "./Components/Head";
 import About from "./Components/About";
 import Service from "./Components/Service";
 import Work from "./Components/Work";
+import Choose from "./Components/Choose";
+import LatestProject from "./Components/LatestProject";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <About />
         <Service />
         <Work />
+        {/* <Choose />
+        <LatestProject /> */}
         {/* <Landing /> */}
       </LanguageContextProvider>
       {/* <About /> */}

@@ -37,15 +37,15 @@ function Head() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse ml-2" id="navbarCollapse">
-                    <div className="col-md-9 navbar-nav ml-auto" style={{paddingLeft:"3%"}}>
-                        <a href="#event" className="pl-5 nav-item nav-link "> <section className="navitem">{nav.home}</section></a>
-                        <a href="#client" className="pl-5 nav-item nav-link"> <section className="navitem">{nav.service}</section></a>
-                        <a href="#client" className="pl-5 nav-item nav-link"> <section className="navitem">{nav.project}</section></a>
-                        <a href="#contact" className="pl-5 nav-item nav-link"> <section className="navitem">{nav.contact}</section></a>
+                    <div className="col-md-9 navbar-nav responsivenav ml-auto" style={{paddingLeft:"3%"}}>
+                        <a href="!#" className=" nav-item nav-link "> <section className="navitem">{nav.home}</section></a>
+                        <a href="!#" className=" nav-item nav-link"> <section className="navitem">{nav.service}</section></a>
+                        <a href="!#" className=" nav-item nav-link"> <section className="navitem">{nav.project}</section></a>
+                        <a href="!#" className=" nav-item nav-link"> <section className="navitem">{nav.contact}</section></a>
                     </div>
-                    <div className="col-md-3 navbar-nav ml-auto">
-                       <a href="/signup" className="nav-item nav-link"  ><span className="navitem pr-5">{nav.signin}</span></a>
-                        <a href="/login" className="nav-item nav-link border" ><span className="navitem" style={{marginLeft:"10px",marginRight:"10px"}}>{nav.signup}</span></a>
+                    <div className="col-md-3 navbar-nav sidenav ml-auto">
+                        <a href="/signup" className="nav-item nav-link"  ><span className="navitem">{nav.signin}</span></a>
+                        <a href="/login" className="nav-item nav-link border" ><span className="navitem">{nav.signup}</span></a>
                     </div>
                 </div>
              </nav>
