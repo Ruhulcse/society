@@ -10,6 +10,7 @@ function About() {
                         <p>blah blah blah blah blah blah blah blah blah  blah blah blah blah blah blah blahblah blah blah blah blah blah blah</p>
                         <br></br>
                         <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blahblah blah blah blah blah blah blah</p>
+                        <br></br>
                         <button className="bt">Learn More</button>
                     </div>
                 </div>
