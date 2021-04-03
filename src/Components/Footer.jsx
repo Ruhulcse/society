@@ -41,7 +41,7 @@ const Footer = () => {
             <div className="footer">
             <div className="footerLeft">
                 <div className="xyz">
-                    <img src={lg} alt="logo"/>
+                    <img className="img-fluid" src={lg} alt="logo"/>
                     <p>We are A-Society Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p>
                     <small>&copy; {new Date().getFullYear()} A-SOCITY</small>
                 </div>

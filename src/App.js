@@ -12,6 +12,8 @@ import Choose from "./Components/Choose";
 import LatestProject from "./Components/LatestProject";
 import LatestNews from "./Components/LatestNews";
 import ContactUs from "./Components/ContactUs";
+import Footer from "./Components/Footer";
+import Foot from "./Components/Foot";
 
 function App() {
   return (
@@ -21,10 +23,12 @@ function App() {
         <About />
         <Service />
         <Work />
-        <Choose />
+        {/* <Choose /> */}
         <LatestProject />
-        <LatestNews />
+        {/* <LatestNews /> */}
         {/* <ContactUs /> */}
+        {/* <Foot /> */}
+        <Footer />
         {/* <Landing /> */}
       </LanguageContextProvider>
       {/* <About /> */}

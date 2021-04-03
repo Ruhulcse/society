@@ -356,7 +356,7 @@ line :before {
 }
 
 .footerLeft .xyz {
-	max-width: 250px;
+	max-width: 27%;
 }
 
 .footerLeft .xyz p,
@@ -374,11 +374,11 @@ small {
 .footerLeft .company,
 .support,
 .contact {
-	margin-top: 40px;
+	margin-top: 4%;
 }
 
 .footerLeft .contact {
-	margin-left: -20px;
+	margin-left: 1%;
 }
 
 .footerLeft .company a,
@@ -398,14 +398,14 @@ small {
 }
 
 .footerRight {
-	margin-top: 40px;
+	margin-top: 4%;
 	border-left: 2px solid #707070;
 	padding-left: 25px;
 }
 
 .footerRight form input[type='email'] {
 	height: 50px;
-	width: 340px;
+	width: 65%;
 	border: none;
 	outline: none;
 	font-size: 20px;
@@ -416,7 +416,7 @@ small {
 
 .footerRight form input[type='submit'] {
 	height: 50px;
-	width: 150px;
+	width: 35%;
 	border: none;
 	outline: none;
 	font-size: 20px;
@@ -442,7 +442,6 @@ small {
 	background-position: right center; /* change the direction of the change here */
 	color: #fff;
 }
-
 .link {
 	margin-top: 35px;
 }
@@ -461,7 +460,7 @@ small {
 
 .link .app-link {
 	background: #22262a;
-	padding: 10px 15px;
+	padding: 1%;
 	border-radius: 5px;
 	margin: 0 5px;
 	transition: 0.2s;
