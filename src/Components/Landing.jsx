@@ -19,7 +19,7 @@ function Landing() {
             <LatestProject/>
             <LatestNews/>
             <ContactUs/>
-            {/* <Footer/> */}
+            <Footer/>
         </>
     )
 }
