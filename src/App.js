@@ -10,6 +10,7 @@ import Service from "./Components/Service";
 import Work from "./Components/Work";
 import Choose from "./Components/Choose";
 import LatestProject from "./Components/LatestProject";
+import LatestNews from "./Components/LatestNews";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Work />
         <Choose />
         <LatestProject />
+        <LatestNews />
         {/* <Choose />
         <LatestProject /> */}
         {/* <Landing /> */}

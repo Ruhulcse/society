@@ -44,7 +44,6 @@ const LatestNews = () => {
                 return `active ${fullNews}`;
             } else  return "none";
         }
-
         return (
             <div className="newsSection">
                 <div className="container">
@@ -52,7 +51,7 @@ const LatestNews = () => {
                     <div className="news-container">
                         {
                             latestNews.news.map((news,index )=> 
-                            <div className="news-card"  key={index}>
+                            <div className="col-md-4 news-card" key={index}>
                                 <img src={news.img} alt=""/>
                                 <div className="news-title">
                                     <h3>{news.title}</h3>
