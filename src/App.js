@@ -11,6 +11,7 @@ import Work from "./Components/Work";
 import Choose from "./Components/Choose";
 import LatestProject from "./Components/LatestProject";
 import LatestNews from "./Components/LatestNews";
+import ContactUs from "./Components/ContactUs";
 
 function App() {
   return (
@@ -23,8 +24,7 @@ function App() {
         <Choose />
         <LatestProject />
         <LatestNews />
-        {/* <Choose />
-        <LatestProject /> */}
+        {/* <ContactUs /> */}
         {/* <Landing /> */}
       </LanguageContextProvider>
       {/* <About /> */}

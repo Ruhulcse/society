@@ -44,8 +44,8 @@ function Head() {
                         <a href="!#" className=" nav-item nav-link"> <section className="navitem">{nav.contact}</section></a>
                     </div>
                     <div className="col-md-3 navbar-nav sidenav ml-auto">
-                        <a href="/signup" className="nav-item nav-link"  ><span className="navitem">{nav.signin}</span></a>
-                        <a href="/login" className="nav-item nav-link border" ><span className="navitem">{nav.signup}</span></a>
+                        <a href="/signup" className="nav-item nav-link"  ><section className="naviteml">{nav.signin}</section></a>
+                        <a href="/login" className="nav-item nav-link border" ><section className="naviteml">{nav.signup}</section></a>
                     </div>
                 </div>
              </nav>
