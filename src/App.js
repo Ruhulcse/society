@@ -19,6 +19,7 @@ function App() {
         <About />
         <Service />
         <Work />
+        <Choose />
         {/* <Choose />
         <LatestProject /> */}
         {/* <Landing /> */}

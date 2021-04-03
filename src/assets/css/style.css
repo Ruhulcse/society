@@ -241,6 +241,27 @@
 .txtc{
 	color: white;
 }
+.img{
+	height: 100%;
+}
+@media screen and (max-width: 768px){
+	.img{
+		height: 100%;
+		width: 100%;
+	}
+}
+@media screen and (max-width: 411px){
+	.img{
+		height: 100%;
+		width: 50%;
+	}
+}
+@media screen and (max-width: 411px){
+	.mid{
+		padding-left: 17%;
+		padding-right: 16%;
+	}
+}
 /*project section*/
 .text-block {
 	position: absolute;

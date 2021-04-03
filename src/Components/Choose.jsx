@@ -12,9 +12,9 @@ function Choose() {
         <div className="container-fluid cbg">
             <div className="row" style={{paddingTop: "5%",paddingBottom: "5%"}}>
                 <div className="col-md-2">
-                  <img src={path} style={{height: "100%"}} alt="not found"/>
+                  <img className="img" src={path} alt="not found"/>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 mid">
                     <h1>
                         <span style={{color:"white"}}>Why You Should Choose </span>
                         <span style={{color: "#ffc7c7",fontWeight: "bold"}}>#A-Society</span>
