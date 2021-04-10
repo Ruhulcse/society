@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {useForm} from 'react-hook-form';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -28,17 +29,31 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Signup() {
+
   const classes = useStyles();
 
   const {register, handleSubmit} = useForm();
 
-  const onSubmit = data => {
-      console.log(data);
+  const onSubmit = async (data) => {
+     
+      const user ={};
+      user.firstName = data.name.firstName;
+      user.lastName = data.name.lastName;
+      user.userName = data.username;
+      user.email = data.email;
+      user.password = data.password;
+      user.confirmationPassword = data.confirm_password;
+
+      try {
+        const {data}  = await axios.post("/api/v1/users/signup",user);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
   }
 
   return (
       <div className="signin-page">
-
     <Container className="signin-form" component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>

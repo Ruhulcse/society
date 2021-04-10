@@ -14,6 +14,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
         </Router>
+        {/* <Admin /> */}
       </LanguageContextProvider>
     </>
   );
