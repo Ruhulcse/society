@@ -800,7 +800,27 @@ label.MuiFormControlLabel-root {
 .login-page .login-form .log_sign_in-btn .signin-btn:focus {
 	outline: none;
 }
+@media (max-width: 768px) {
+	.login-page .login-form {
+		padding: 50px 50px 80px 50px;
+	}
 
+	.login-page .login-form .email-pass input {
+		width: 260px;
+		padding: 10px 10px 10px 30px;
+	}
+}
+
+@media (max-width: 500px) {
+	.login-page .login-form {
+		padding: 50px 40px 80px 40px;
+	}
+
+	.login-page .login-form .email-pass input {
+		width: 260px;
+		padding: 10px 10px 10px 30px;
+	}
+}
 /*.latest project*/
 .sc{
 	color: #000;
