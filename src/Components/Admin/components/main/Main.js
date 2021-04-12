@@ -54,32 +54,41 @@ const Main = () => {
   return (
     <main>
       <div className="main__container">
-        {/* <div className="row">
-                {Users.map((item)=>(
-                    <div className="col-md-6">
-                    <div class="card mt-5">
-                        <div class="card-body">
-                            <div className="row">
-                            <div className="col-md-2">
-                                <img className="img-fluid rounded-circle" src={item.profile} alt="not found"/>
-                            </div>
-                            <div className="col-md-6">
-                                <h5>{item.name}</h5>
-                                <p style={{color: "gray"}}>{item.profession}</p>
-                                <p style={{color: "gray"}}>Mobile: {item.mobile}</p>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="row float-right">
-                                <button className="btn"><i class="fas fa-pen"></i></button>
-                                <button className="btn"><i class="fas fa-times"></i></button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
+        <div className="row">
+          {Users.map((item) => (
+            <div className="col-md-6">
+              <div class="card mt-5 mr-2 ml-2">
+                <div class="card-body ml-2 mr-2">
+                  <div className="row ml-2 mr-2">
+                    <div className="col-md-2">
+                      <img
+                        className="img-fluid rounded-circle"
+                        style={{ height: "100px", width: "100px" }}
+                        src={item.profile}
+                        alt="not found"
+                      />
                     </div>
-                ))}
-            </div> */}
+                    <div className="col-md-6 pl-3">
+                      <h5>{item.name}</h5>
+                      <p style={{ color: "gray" }}>{item.profession}</p>
+                      <p style={{ color: "gray" }}>Mobile: {item.mobile}</p>
+                    </div>
+                    <div className="col-md-4">
+                      <div className="row float-right">
+                        <button className="btn">
+                          <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button className="btn">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );

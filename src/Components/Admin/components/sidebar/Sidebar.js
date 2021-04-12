@@ -29,7 +29,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
               <i className="fa fa-home icon"></i>
             </div>
             <div className="col-md-10">
-              <a href="#">Dashboard</a>
+              <a href="/admin">Dashboard</a>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
               <i className="fas fa-user icon"></i>
             </div>
             <div className="col-md-10">
-              <a className="white" href="#">
+              <a className="white" href="/admin/users">
                 Users
               </a>
             </div>

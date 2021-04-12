@@ -38,7 +38,7 @@ main {
   margin: 20px 0;
 }
 
-.card {
+/* .card {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -57,7 +57,7 @@ main {
 
 .card_inner > span {
   font-size: 25px;
-}
+} */
 
 .charts {
   display: grid;
@@ -180,7 +180,18 @@ main {
   border-radius: 5px;
   font-size: 14px;
 }
+.circular--portrait {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
 
+.circular--portrait img {
+  width: 100%;
+  height: auto;
+}
 @media only screen and (max-width: 855px) {
   .main__cards {
     grid-template-columns: 1fr;

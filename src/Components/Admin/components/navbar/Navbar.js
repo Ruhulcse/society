@@ -3,7 +3,7 @@ import avatar from "../../assets/profile2.jpg";
 
 const Navbar = ({ sidebarOpen, openSidebar }) => {
   return (
-    <nav className="navbar">
+    <nav className="navigationbar">
       <div className="nav_icon" onClick={() => openSidebar()}>
         <i className="fa fa-bars" aria-hidden="true"></i>
       </div>
@@ -11,11 +11,11 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
         <h1>Proposal</h1>
       </div>
       <div className="navbar__right">
-        <a href="#">
+        <a href="!#">
           <i className="fas fa-globe mr-1" aria-hidden="true"></i>
           <i className="fas fa-comments" aria-hidden="true"></i>
         </a>
-        <a href="#">
+        <a href="!#">
           <i className="fas fa-bell" aria-hidden="true"></i>
         </a>
         <div class="dropdown show">

@@ -5,7 +5,7 @@ import Main from "./components/main/Main";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 
-const App = () => {
+const User = () => {
   const [sidebarOpen, setsidebarOpen] = useState(false);
   const openSidebar = () => {
     setsidebarOpen(true);
@@ -16,10 +16,10 @@ const App = () => {
   return (
     <div className="contain">
       <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
-      {/* <Main /> */}
+      <Main />
       <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
     </div>
   );
 };
 
-export default App;
+export default User;
