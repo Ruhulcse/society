@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faQuestionCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 
 const ContactUs = () => {
+     const [name, setName] = useState("");
+     const [email, setEmail] = useState("");
+     const [phone, setPhone] = useState("");
+     const [service, setService] = useState("");
+     const [message, setMessage] = useState("");
+     const [image, setImage] = useState(null);
+
+     const submitHandler = async (e) =>{
+         e.preventDefault();;
+         console.log(message);
+     }
     return (
         <div className="container">
             <div className="bs">
-
             <h1 className="mb-5">Contact Us</h1>
             <div class="contact-form">
-					<form>
+					<form onSubmit={submitHandler}>
 						<div class="row">
 							<div class="input25">
                                 <h6>
@@ -20,7 +30,12 @@ const ContactUs = () => {
                                         </abbr>
                                     </span>
                                 </h6>
-								<input type="text" placeholder="Your Name" />
+								<input 
+                                type="text" 
+                                placeholder="Your Name" 
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                />
 							</div>						
 							<div class="input25">
                                 <h6>
@@ -31,7 +46,12 @@ const ContactUs = () => {
                                         </abbr>
                                     </span>
                                 </h6>
-								<input type="text" placeholder="example@mail.com" />
+								<input 
+                                type="text" 
+                                placeholder="example@mail.com" 
+                                value = {email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                />
 							</div>
 							<div class="input25">
                                 <h6>
@@ -42,7 +62,12 @@ const ContactUs = () => {
                                         </abbr>
                                     </span>
                                 </h6>
-								<input type="tel" placeholder="+123 456789" />
+								<input 
+                                type="tel" 
+                                placeholder="+123 456789" 
+                                value ={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                />
 							</div>
                             <div class="input25">
                                 <h6>
@@ -53,7 +78,12 @@ const ContactUs = () => {
                                         </abbr>
                                     </span>
                                 </h6>
-								<input type="text" placeholder="Mobile Application" />
+								<input 
+                                type="text"
+                                placeholder="Mobile Application"
+                                value = {service}
+                                onChange={(e) => setService(e.target.value)}
+                                 />
 							</div>
 						</div>
 						<div class="row">
@@ -66,7 +96,7 @@ const ContactUs = () => {
                                         </abbr>
                                     </span>
                                 </h6>
-								<textarea placeholder="Message"></textarea>
+								<textarea placeholder="Message" value={message}  onChange={(e) => setMessage(e.target.value)}></textarea>
 							</div>
                             <div class="input30">
                                 <h6>
