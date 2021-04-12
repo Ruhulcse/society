@@ -1,61 +1,60 @@
 import "./Main.css";
-import profile from "../../assets/profile.png"
+import profile from "../../assets/profile.png";
 const Main = () => {
   const Users = [
     {
-    name: "Luai Ahmed",
-    profile: profile,
-    profession: "Web developer",
-    mobile: "+6012913317"
-   },
-   {
-    name: "Abdulmalek",
-    profile: profile,
-    profession: "Mobile developer",
-    mobile: "+6012913317"
-   },
-   {
-    name: "Abdulsalem",
-    profile: profile,
-    profession: "Mobile developer",
-    mobile: "+6012913317"
-   },
-   {
-    name: "Ahmed",
-    profile: profile,
-    profession: "Mobile developer",
-    mobile: "+6012913317"
-   },
-   {
-    name: "Mohammed",
-    profile: profile,
-    profession: "Mobile developer",
-    mobile: "+6012913317"
-   },
-   {
-    name: "Saleh",
-    profile: profile,
-    profession: "Mobile developer",
-    mobile: "+6012913317"
-   },
-   {
-    name: "Ameer",
-    profile: profile,
-    profession: "Mobile developer",
-    mobile: "+6012913317"
-   },
-   {
-    name: "aslan",
-    profile: profile,
-    profession: "Mobile developer",
-    mobile: "+6012913317"
-   }
-
-]
+      name: "Luai Ahmed",
+      profile: profile,
+      profession: "Web developer",
+      mobile: "+6012913317",
+    },
+    {
+      name: "Abdulmalek",
+      profile: profile,
+      profession: "Mobile developer",
+      mobile: "+6012913317",
+    },
+    {
+      name: "Abdulsalem",
+      profile: profile,
+      profession: "Mobile developer",
+      mobile: "+6012913317",
+    },
+    {
+      name: "Ahmed",
+      profile: profile,
+      profession: "Mobile developer",
+      mobile: "+6012913317",
+    },
+    {
+      name: "Mohammed",
+      profile: profile,
+      profession: "Mobile developer",
+      mobile: "+6012913317",
+    },
+    {
+      name: "Saleh",
+      profile: profile,
+      profession: "Mobile developer",
+      mobile: "+6012913317",
+    },
+    {
+      name: "Ameer",
+      profile: profile,
+      profession: "Mobile developer",
+      mobile: "+6012913317",
+    },
+    {
+      name: "aslan",
+      profile: profile,
+      profession: "Mobile developer",
+      mobile: "+6012913317",
+    },
+  ];
   return (
     <main>
       <div className="main__container">
-            <div className="row">
+        {/* <div className="row">
                 {Users.map((item)=>(
                     <div className="col-md-6">
                     <div class="card mt-5">
@@ -80,7 +79,7 @@ const Main = () => {
                         </div>
                     </div>
                 ))}
-            </div>
+            </div> */}
       </div>
     </main>
   );
