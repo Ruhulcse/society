@@ -15,7 +15,11 @@ const User = () => {
   };
   return (
     <div className="contain">
-      <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
+      <Navbar
+        sidebarOpen={sidebarOpen}
+        openSidebar={openSidebar}
+        name="Users"
+      />
       <Main />
       <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
     </div>

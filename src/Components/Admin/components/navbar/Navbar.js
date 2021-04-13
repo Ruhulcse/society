@@ -1,14 +1,14 @@
 import "./Navbar.css";
 import avatar from "../../assets/profile2.jpg";
 
-const Navbar = ({ sidebarOpen, openSidebar }) => {
+const Navbar = ({ sidebarOpen, openSidebar, name }) => {
   return (
     <nav className="navigationbar">
       <div className="nav_icon" onClick={() => openSidebar()}>
         <i className="fa fa-bars" aria-hidden="true"></i>
       </div>
       <div className="navbar__left">
-        <h1>Proposal</h1>
+        <h1>{name}</h1>
       </div>
       <div className="navbar__right">
         <a href="!#">

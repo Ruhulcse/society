@@ -75,7 +75,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
               <i className="fas fa-calendar-alt icon"></i>
             </div>
             <div className="col-md-10">
-              <a className="white" href="#">
+              <a className="white" href="/admin/proposal">
                 Proposel
               </a>
             </div>
