@@ -13,6 +13,7 @@ const ContactUs = () => {
      const submitHandler = async (e) =>{
          e.preventDefault();;
          console.log(message);
+         console.log(image)
      }
     return (
         <div className="container">
@@ -107,7 +108,15 @@ const ContactUs = () => {
                                         </abbr>
                                     </span>
                                 </h6>
-                                <input style={{display: 'block'}} type="file" name="" id=""/>
+                                <input 
+                                style={{display: 'block'}}
+                                 type="file"
+                                 name=""
+                                 id=""
+                                 onChange={(picture) => {
+                                    setImage(picture.currentTarget.files[0], false);
+                                  }}
+                                 />
                                 <FontAwesomeIcon icon={faCloudUploadAlt} />
                                 <h6>Drop file here</h6>
                                 <p>or</p>

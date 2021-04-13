@@ -42,7 +42,9 @@ const Footer = () => {
             <div className="footerLeft">
                 <div className="xyz">
                     <img className="img-fluid" src={lg} alt="logo"/>
-                    <p>We are A-Society Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p>
+                    <p>
+                    ASociety group provides a great service in term of Planning, building, testing, publishing, and maintaining your Mobile and Web Application
+                    </p>
                     <small>&copy; {new Date().getFullYear()} A-SOCITY</small>
                 </div>
             
