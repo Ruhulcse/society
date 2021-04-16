@@ -29,13 +29,13 @@ const ContactUs = () => {
          Proposal.projectType = service;
          Proposal.description = message;
          Proposal.attachment = base64Data;
-         console.log(Proposal)
-        //  try {
-        //     const {data}  = await axios.post("http://localhost:5000/api/v1/product/createProduct",Proposal);
-        //     console.log(data);
-        //   } catch (error) {
-        //     console.log(error);
-        //   }
+        //  console.log(Proposal)
+         try {
+            const {data}  = await axios.post("http://localhost:5000/api/v1/product/createProduct",Proposal);
+            console.log(data);
+          } catch (error) {
+            console.log(error);
+          }
      }
     return (
         <div className="container" id="contact">
