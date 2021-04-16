@@ -15,10 +15,10 @@ function Landing() {
             <About/>
             <Service/>
             <Work/>
-            {/* <Choose/> */}
+            <Choose/>
             <LatestProject/>
-            {/* <LatestNews/> */}
-            {/* <ContactUs/> */}
+            <LatestNews/> 
+            <ContactUs/>
             <Footer/>
         </>
     )
