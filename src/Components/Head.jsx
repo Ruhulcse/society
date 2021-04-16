@@ -38,10 +38,10 @@ function Head() {
                 </button>
                 <div className="collapse navbar-collapse ml-2" id="navbarCollapse">
                     <div className="col-md-9 navbar-nav responsivenav ml-auto" style={{paddingLeft:"3%"}}>
-                        <a href="!#" className=" nav-item nav-link "> <section className="navitem">{nav.home}</section></a>
-                        <a href="!#" className=" nav-item nav-link"> <section className="navitem">{nav.service}</section></a>
-                        <a href="!#" className=" nav-item nav-link"> <section className="navitem">{nav.project}</section></a>
-                        <a href="!#" className=" nav-item nav-link"> <section className="navitem">{nav.contact}</section></a>
+                        <a href="#home" className=" nav-item nav-link "> <section className="navitem">{nav.home}</section></a>
+                        <a href="#service" className=" nav-item nav-link"> <section className="navitem">{nav.service}</section></a>
+                        <a href="#project" className=" nav-item nav-link"> <section className="navitem">{nav.project}</section></a>
+                        <a href="#contact" className=" nav-item nav-link"> <section className="navitem">{nav.contact}</section></a>
                     </div>
                     <div className="col-md-3 navbar-nav sidenav ml-auto">
                         <a href="/signup" className="nav-item nav-link"  ><section className="naviteml">{nav.signin}</section></a>

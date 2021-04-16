@@ -20,7 +20,6 @@ function App() {
           <Route exact path="/admin/users" component={Users} />
           <Route exact path="/admin/proposal" component={Proposal} />
         </Router>
-        {/* <Admin /> */}
       </LanguageContextProvider>
     </>
   );

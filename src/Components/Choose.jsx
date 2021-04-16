@@ -9,7 +9,7 @@ import awareness from "../assets/img/awareness.png"
 import path from "../assets/img/new.png"
 function Choose() {
     return (
-        <div className="container-fluid cbg">
+        <div className="container-fluid cbg" id="home">
             <div className="row" style={{paddingTop: "5%",paddingBottom: "5%"}}>
                 <div className="col-md-2">
                   <img className="img" src={path} alt="not found"/>

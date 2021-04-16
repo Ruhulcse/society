@@ -9,7 +9,7 @@ import graphics from "../assets/img/Op component 1.png";
 function Service() {
    const{english} = useContext(LanguageContext);
     return (  
-        <div class="card sbg">
+        <div class="card sbg" id="service">
         <div class="card-body box">
             <div className="container">
                <div className="d-flex justify-content-center">

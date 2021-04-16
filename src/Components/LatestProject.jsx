@@ -6,7 +6,7 @@ function LatestProject() {
     const [ourProject,setOurProject] = useState(true);
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid" id="project">
             <div className="row pt-5"></div>
             <div className="d-flex justify-content-center pt-5">
                 <h2>Our Latest Project</h2>
