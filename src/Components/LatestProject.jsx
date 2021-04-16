@@ -12,7 +12,7 @@ function LatestProject() {
                 <h2>Our Latest Project</h2>
             </div>
             <div className="d-flex justify-content-center">
-               <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+               <p className="abouttext">blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
             </div>
             <div className="row pl-5 pr-5">
                 <div className="col-md-12 decorated">

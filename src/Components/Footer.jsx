@@ -42,24 +42,24 @@ const Footer = () => {
             <div className="footerLeft">
                 <div className="xyz">
                     <img className="img-fluid" src={lg} alt="logo"/>
-                    <p>
+                    <p className="abouttext">
                     ASociety group provides a great service in term of Planning, building, testing, publishing, and maintaining your Mobile and Web Application
-                    </p>
+                    </p >
                     <small>&copy; {new Date().getFullYear()} A-SOCITY</small>
                 </div>
             
                 <div className="company">
-                    <p>Company</p>
+                    <p className="abouttext">Company</p>
                     {company.map((company) => <a href={company.link}>{company.prop}</a>)}
                 </div>
 
                 <div className="support">
-                    <p>Support</p>
+                    <p className="abouttext" >Support</p>
                     {support.map((support) => <a href={support.link}>{support.prop}</a>)}
                 </div>
             
                 <div className="contact">
-                    <p>Contact</p>
+                    <p  className="abouttext">Contact</p>
                     <p className="address">Parkhill Residence, Bukit Jalil <br/> +60-18-1212-123 <br/> Email: A-Society@mail.com</p>
                 </div>
             </div>

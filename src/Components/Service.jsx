@@ -16,10 +16,10 @@ function Service() {
                    <h1>Our Services</h1>
                </div>
                <div className="d-flex justify-content-center">
-                 <p className="text-center m-1">We are the best on the market & we can prove with more than just words,</p>
+                 <p className="text-center m-1 smain">We are the best on the market & we can prove with more than just words,</p>
                </div>
                <div className="d-flex justify-content-center">
-                 <p className="text-center">check our projects below</p>
+                 <p className="text-center smain">check our projects below</p>
                </div>
                <div className="row pt-5">
                 <div class="col-sm-6 col-md-4 col-lg-4">
@@ -34,11 +34,13 @@ function Service() {
                    <h4 className="pt-4">Web Development</h4>
                  </div>
                  <div className="d-flex justify-content-center">
-                    <p className="text-center m-1">
+                    <p className="text-center m-1 stext">
                     A decade of design experience has sharpened our team’s competence in building cutting-edge UI and UX, and we make sure to adhere to the most up-to-date industry standards, workflows, and guidelines.
 
                    This means that you’ll get the product you need, exactly how you need it and when you need it
                     </p>
+                    
+                    
                  </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-4">
@@ -51,7 +53,7 @@ function Service() {
                    <h4 className="pt-4">Apps Development</h4>
                  </div>
                  <div className="d-flex justify-content-center">
-                    <p className="text-center m-1">
+                    <p className="text-center m-1 stext">
                       Our mobile apps are designed to perform at all costs. Our team takes pride in designing mobile applications that your customers will find secure, functional, and easy to uses.
                     </p>
                  </div>
@@ -66,7 +68,7 @@ function Service() {
                    <h4 className="pt-4">Web Hosting</h4>
                  </div>
                  <div className="d-flex justify-content-center">
-                    <p className="text-center m-1">
+                    <p className="text-center m-1  stext">
                     Digitally transforming your business gives you access to new revenue streams, cost-saving opportunities, and the freedom to do more with less.
                     </p>
                  </div>
@@ -83,7 +85,7 @@ function Service() {
                    <h4 className="pt-4">UX Design</h4>
                  </div>
                  <div className="d-flex justify-content-center">
-                    <p className="text-center m-1">
+                    <p className="text-center m-1 stext">
                     A decade of design experience has sharpened our team’s competence in building cutting-edge UI and UX, and we make sure to adhere to the most up-to-date industry standards, workflows, and guidelines. This means that you will get the product you need, exactly how you need it and when you need it.
                     </p>
                  </div>
@@ -98,7 +100,7 @@ function Service() {
                    <h4 className="pt-4">SEO Optimize</h4>
                  </div>
                  <div className="d-flex justify-content-center">
-                    <p className="text-center m-1">
+                    <p className="text-center m-1  stext">
                     We can increase the number of users to your sites and make more engagement to your website. Through this process, the quality and quantity of your site traffic will be improved.
                     </p>
                  </div>
@@ -113,7 +115,7 @@ function Service() {
                    <h4 className="pt-4">Video Production</h4>
                  </div> 
                  <div className="d-flex justify-content-center">
-                    <p className="text-center m-1">
+                    <p className="text-center m-1  stext">
                     Impress people and get your message across in style with videos.
 
 We will work closely with you to make sure the videos work for your needs and reach a broad audience, at a surprisingly affordable price.

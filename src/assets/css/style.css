@@ -133,7 +133,10 @@
 	text-decoration: none;
 	color: #fff;
 }
-
+.abouttext{
+	font-size: 114%;
+    line-height: 1.8;
+}
 /*Service section */
 .sbg {
 	background-color: #eaeaea;
@@ -217,6 +220,14 @@
 	top: 100%;
 	width: 0;
 	border-top: 86.6px solid #64c7cc;
+}
+.stext{
+	font-size: 114%;
+    line-height: 1.8;
+    padding: 4%;
+}
+.smain{
+	font-size: 115%;
 }
 /*Work section style*/
 .video_box {
@@ -496,7 +507,7 @@ small {
 .contact-form .row {
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
+	/* justify-content: space-around; */
 	margin-top: 15px;
 }
 

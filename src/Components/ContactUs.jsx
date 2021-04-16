@@ -8,6 +8,7 @@ const ContactUs = () => {
      const [phone, setPhone] = useState("");
      const [service, setService] = useState("");
      const [message, setMessage] = useState("");
+     const [projecttitle, setProjectTitle] = useState("");
      const [image, setImage] = useState(null);
 
      const toBase64 = file => new Promise((resolve, reject) => {
@@ -24,16 +25,17 @@ const ContactUs = () => {
          Proposal.username = name;
          Proposal.userIdentifer = email;
          Proposal.phoneNumber = phone;
-         Proposal.projectTitle = "Attendance System"
+         Proposal.projectTitle = projecttitle;
          Proposal.projectType = service;
          Proposal.description = message;
          Proposal.attachment = base64Data;
-         try {
-            const {data}  = await axios.post("http://localhost:5000/api/v1/product/createProduct",Proposal);
-            console.log(data);
-          } catch (error) {
-            console.log(error);
-          }
+         console.log(Proposal)
+        //  try {
+        //     const {data}  = await axios.post("http://localhost:5000/api/v1/product/createProduct",Proposal);
+        //     console.log(data);
+        //   } catch (error) {
+        //     console.log(error);
+        //   }
      }
     return (
         <div className="container" id="contact">
@@ -107,6 +109,24 @@ const ContactUs = () => {
                                  />
 							</div>
 						</div>
+                        <div className="row">
+                        <div class="input25">
+                                <h6>
+                                    Project Title
+                                    <span>
+                                        <abbr title="Enter project title">
+                                            <FontAwesomeIcon icon={faQuestionCircle} />
+                                        </abbr>
+                                    </span>
+                                </h6>
+								<input 
+                                type="text" 
+                                placeholder="Project title" 
+                                value={projecttitle}
+                                onChange={(e) => setProjectTitle(e.target.value)}
+                                />
+							</div>		
+                        </div>
 						<div class="row">
 							<div class="input60">
                                 <h6>

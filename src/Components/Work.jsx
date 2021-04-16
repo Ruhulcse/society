@@ -8,7 +8,7 @@ function Work() {
                 <h1>How We Work</h1>
             </div>
             <div className="d-flex justify-content-center">
-               <p>simple process at which you can make your ideas possible with 3 easy steps</p>
+               <p className="abouttext">simple process at which you can make your ideas possible with 3 easy steps</p>
             </div>
             <div className="row pb-5 pt-5">
                 <div className="col-md-4 " style={{paddingLeft:"5%",paddingTop:"4%"}}>
