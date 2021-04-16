@@ -14,7 +14,7 @@ const App = () => {
     setsidebarOpen(true);
   };
   let token = localStorage.getItem("token");
-  console.log(token);
+  
   if (!token) {
     window.location.href = "/";
   }
