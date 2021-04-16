@@ -1,12 +1,26 @@
 import {Checkbox, FormControlLabel} from '@material-ui/core';
 import React from 'react';
 import {useForm} from 'react-hook-form';
-
+import axios from 'axios';
 const Login = () => {
     const {register, handleSubmit} = useForm();
 
-    const onSubmit = data => {
+    const onSubmit = async (data) => {
         console.log(data);
+        const loginData = {};
+        loginData.email = data.email;
+        loginData.password = data.password;
+        try {
+            const {data}  = await axios.post("http://localhost:5000/api/v1/users/login",loginData);
+            console.log(data);
+            if (data) {
+                localStorage.setItem("user", JSON.stringify(data));
+                localStorage.setItem("token", data.token);
+                window.location.href = "/admin";
+              }
+          } catch (error) {
+            console.log(error);
+          }
     }
 
     return (
@@ -27,7 +41,7 @@ const Login = () => {
                     </div>
 
                     <div className="log_sign_in-btn">
-                        <button type="submit" className="login-btn">Ligin</button>
+                        <button type="submit" className="login-btn">Login</button>
                         <a className="signin-btn" href="/signup">Signup?</a>
                     </div>
                 </form>

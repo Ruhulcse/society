@@ -13,6 +13,11 @@ const App = () => {
   const closeSidebar = () => {
     setsidebarOpen(true);
   };
+  let token = localStorage.getItem("token");
+  console.log(token);
+  if (!token) {
+    window.location.href = "/";
+  }
   return (
     <div className="contain">
       <Navbar

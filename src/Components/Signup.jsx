@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Signup() {
+function Signup({history}) {
 
   const classes = useStyles();
 
@@ -45,8 +45,10 @@ function Signup() {
       user.confirmationPassword = data.confirm_password;
 
       try {
-        const {data}  = await axios.post("/api/v1/users/signup",user);
-        console.log(data);
+        const {data}  = await axios.post("http://localhost:5000/api/v1/users/signup",user);
+        if(data.status="success messsgea"){
+          history.push('/login')
+        }
       } catch (error) {
         console.log(error);
       }
