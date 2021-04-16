@@ -2,6 +2,10 @@ import "./Navbar.css";
 import avatar from "../../assets/profile2.jpg";
 
 const Navbar = ({ sidebarOpen, openSidebar, name }) => {
+  let data = JSON.parse(localStorage.getItem('user'))
+  console.log(data);
+  let userName = data.user.userName;
+  console.log(userName)
   return (
     <nav className="navigationbar">
       <div className="nav_icon" onClick={() => openSidebar()}>
@@ -28,7 +32,7 @@ const Navbar = ({ sidebarOpen, openSidebar, name }) => {
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Luai Ahm
+            {userName}
           </a>
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
