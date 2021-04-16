@@ -23,6 +23,8 @@ function Head() {
   
     return (
         <div className="container-fluid bg">
+             {/* <button onClick={en}>english</button>
+             <button onClick={ar}>arabic</button> */}
          <div className="row pt-5">
              <div className="col-md-3">
                 <div>
@@ -46,6 +48,10 @@ function Head() {
                     <div className="col-md-3 navbar-nav sidenav ml-auto">
                         <a href="/signup" className="nav-item nav-link"  ><section className="naviteml">{nav.signin}</section></a>
                         <a href="/login" className="nav-item nav-link border" ><section className="naviteml">{nav.signup}</section></a>
+                        <select class="opt">
+                        <option>Arabic</option>
+                        <option>English</option>
+                        </select>
                     </div>
                 </div>
              </nav>

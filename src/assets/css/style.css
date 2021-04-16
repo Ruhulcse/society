@@ -839,3 +839,31 @@ label.MuiFormControlLabel-root {
 	color: white;
     text-decoration: none;
 }
+
+.language{
+	background: #292626;
+    color: white;
+    font-family: 'Poppins';
+    border-radius: 23%;
+    font-weight: bold;
+}
+.opt{
+	border: 1px solid #ececec;
+    border-radius: 14px;
+    background: #252323;
+    color: white;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+	.opt {
+		border: 1px solid #ececec;
+		border-radius: 10px;
+		background: #483838;
+		color: white;
+		font-family: 'Poppins';
+		font-weight: bold;
+        border-radius: 10px;
+		margin-right: 71%;
+	}
+}
