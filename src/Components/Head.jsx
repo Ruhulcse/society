@@ -22,7 +22,7 @@ function Head() {
     };
   
     return (
-        <div className="container-fluid bg">
+        <div className="container-fluid bg" id="home">
              {/* <button onClick={en}>english</button>
              <button onClick={ar}>arabic</button> */}
          <div className="row pt-5">

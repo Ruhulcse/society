@@ -58,7 +58,7 @@ const LatestNews = () => {
                                 </div>
                                 <div className="news-content">
                                     <p>{news.news_primary} <span className={toggleActiveStyles(index)} >{news.news_all}</span></p>
-                                <button className="read-more" onClick={() => toggleActive(index)} > Read More <FontAwesomeIcon icon={faPlus} /></button>
+                                <a href="/news" className="read-more"  > Read More <FontAwesomeIcon icon={faPlus} /></a>
                                 </div>
                             </div>
                             )
