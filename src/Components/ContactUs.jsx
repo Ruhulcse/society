@@ -179,7 +179,7 @@ const ContactUs = () => {
                                 <p>Select File</p>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row justify-content-center">
 							<div class="input100">
 								<input className="bt" type="submit" value="Send" />
 							</div>
