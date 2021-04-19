@@ -2,6 +2,11 @@ import "./Sidebar.css";
 import logo from "../../assets/log.png";
 
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
+
+  let data = JSON.parse(localStorage.getItem('user'))
+  let userType = data.user.userType;
+  console.log(userType)
+
   return (
     <div className={sidebarOpen ? "sidebar_responsive" : ""} id="sidebar">
       <div className="sidebar__title">
@@ -28,48 +33,55 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
             <div className="col-md-2">
               <i className="fa fa-home icon"></i>
             </div>
-            <div className="col-md-10">
+          {(userType=="USER"||userType=="ADMIN")&& <div className="col-md-10">
               <a href="/admin">Dashboard</a>
-            </div>
+            </div>}
           </div>
         </div>
-        <div className="sidebar__link">
-          <div className="row">
-            <div className="col-md-2">
-              <i className="fas fa-chart-bar icon" aria-hidden="true"></i>
-            </div>
-            <div className="col-md-10">
-              <a className="white" href="#">
-                new project
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="sidebar__link">
-          <div className="row">
-            <div className="col-md-2">
-              <i className="fas fa-comments icon"></i>
-            </div>
-            <div className="col-md-10">
-              <a className="white" href="#">
-                Chat Room
-              </a>
+        {userType=="ADMIN"&&(
+            <div className="sidebar__link">
+            <div className="row">
+              <div className="col-md-2">
+                <i className="fas fa-chart-bar icon" aria-hidden="true"></i>
+              </div>
+              <div className="col-md-10">
+                <a className="white" href="#">
+                  new project
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="sidebar__link">
-          <div className="row">
-            <div className="col-md-2">
-              <i className="fas fa-user icon"></i>
+        )}
+        {userType=="ADMIN"&&(
+              <div className="sidebar__link">
+              <div className="row">
+                <div className="col-md-2">
+                  <i className="fas fa-comments icon"></i>
+                </div>
+                <div className="col-md-10">
+                  <a className="white" href="#">
+                    Chat Room
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="col-md-10">
-              <a className="white" href="/admin/users">
-                Users
-              </a>
+          )}
+          {userType=="ADMIN"&&(
+              <div className="sidebar__link">
+              <div className="row">
+                <div className="col-md-2">
+                  <i className="fas fa-user icon"></i>
+                </div>
+                <div className="col-md-10">
+                  <a className="white" href="/admin/users">
+                    Users
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="sidebar__link">
+          )}
+        {(userType=="ADMIN"||userType=="USER")&&(
+          <div className="sidebar__link">
           <div className="row">
             <div className="col-md-2">
               <i className="fas fa-calendar-alt icon"></i>
@@ -81,30 +93,35 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
             </div>
           </div>
         </div>
-        <div className="sidebar__link">
-          <div className="row">
-            <div className="col-md-2">
-              <i className="fas fa-cog icon"></i>
-            </div>
-            <div className="col-md-10">
-              <a className="white" href="#">
-                Setting
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="sidebar__link">
-          <div className="row">
-            <div className="col-md-2">
-              <i className="fas fa-newspaper icon"></i>
-            </div>
-            <div className="col-md-10">
-              <a className="white" href="#">
-                News
-              </a>
+        )}
+        {userType=="ADMIN" &&(
+            <div className="sidebar__link">
+            <div className="row">
+              <div className="col-md-2">
+                <i className="fas fa-cog icon"></i>
+              </div>
+              <div className="col-md-10">
+                <a className="white" href="#">
+                  Setting
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        )}
+        {userType=="ADMIN"&&(
+            <div className="sidebar__link">
+            <div className="row">
+              <div className="col-md-2">
+                <i className="fas fa-newspaper icon"></i>
+              </div>
+              <div className="col-md-10">
+                <a className="white" href="#">
+                  News
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
