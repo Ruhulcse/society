@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -29,25 +29,47 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Signup({history}) {
-
+ const [email, setEmail ] = useState("");
+ const [password, setPassword] = useState("");
+ const [confirm, setConfirm] = useState("");
+ const [term , setTerm ] = useState("");
+ const [valid, setValid ] = useState(true);
   const classes = useStyles();
 
   const {register, handleSubmit} = useForm();
 
+  var isValidEmail=(email)=>{
+    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+   if(email.match(mailformat)){
+     return true;
+   }
+   else{
+     return false;
+   }
+  }
   const onSubmit = async (data) => {
-     
+     setValid(isValidEmail(email));
+     setTerm(data.tc?data.tc:"not agreed");
       const user ={};
       user.firstName = data.name.firstName;
       user.lastName = data.name.lastName;
       user.userName = data.username;
-      user.email = data.email;
-      user.password = data.password;
-      user.confirmationPassword = data.confirm_password;
+      user.email = email;
+      user.password = password;
+      user.confirmationPassword = confirm;
+
+      let error = false;
+      error = (!email ? true : false);
+      error = (password!=confirm ? true : false);
+      error = (term!="agree" ? true : false)
 
       try {
-        const {data}  = await axios.post("http://localhost:5000/api/v1/users/signup",user);
+        if(error==false){
+          console.log(user);
+          const {data}  = await axios.post("http://localhost:5000/api/v1/users/signup",user);
         if(data.status="success messsgea"){
           history.push('/login')
+        }
         }
       } catch (error) {
         console.log(error);
@@ -111,10 +133,12 @@ function Signup({history}) {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                inputRef={register}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
+            {!valid&&( <p style={{color: "#fbff00"}}>Enter a valid Email</p>)}
               <TextField  
                 required
                 fullWidth
@@ -123,7 +147,8 @@ function Signup({history}) {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                inputRef={register}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -135,16 +160,19 @@ function Signup({history}) {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                inputRef={register}
+                value={confirm}
+                onChange={(e) => setConfirm(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
+            {confirm.length>0&&password.length>0&&(password!=confirm)&&( <p  style={{color: "#fbff00"}}>Password is not matched</p>)}
               <FormControlLabel
-                control={<Checkbox name="t&c" value="agree" color="primary" inputRef={register} />}
+                control={<Checkbox name="tc" value="agree" color="primary" inputRef={register} />}
                 label="I agree with terms and conditions."
               />
             </Grid>
           </Grid>
+          {term!="agree" &&(term.length>0) &&( <p  style={{color: "#fbff00"}}>Accept Term and condition</p>)}
           <Grid container justify="center">
             <Grid item>
           <Button
