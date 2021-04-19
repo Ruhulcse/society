@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import CircularProgress from '@material-ui/core/CircularProgress'
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
@@ -29,11 +30,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Signup({history}) {
- const [email, setEmail ] = useState("");
- const [password, setPassword] = useState("");
- const [confirm, setConfirm] = useState("");
- const [term , setTerm ] = useState("");
- const [valid, setValid ] = useState(true);
+  const [email, setEmail ] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [term , setTerm ] = useState("");
+  const [valid, setValid ] = useState(true);
+  const [loading, setLoading ] = useState(false);
   const classes = useStyles();
 
   const {register, handleSubmit} = useForm();
@@ -65,9 +67,10 @@ function Signup({history}) {
 
       try {
         if(error==false){
-          console.log(user);
+          setLoading(true);
           const {data}  = await axios.post("http://localhost:5000/api/v1/users/signup",user);
-        if(data.status="success messsgea"){
+        if(data.token!=null){
+          setLoading(false);
           history.push('/login')
         }
         }
@@ -86,7 +89,7 @@ function Signup({history}) {
           Sign up
         </Typography>
         <Typography className="pt-3 text-white" component="p" variant="p">
-          Please complete to sign up
+          {loading?<CircularProgress />:(<p>Please complete to sign up</p>)}
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2}>
@@ -143,7 +146,8 @@ function Signup({history}) {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Password "
+                placeholder="Minium 8 character"
                 type="password"
                 id="password"
                 autoComplete="current-password"
