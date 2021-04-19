@@ -6,6 +6,12 @@ const Navbar = ({ sidebarOpen, openSidebar, name }) => {
   console.log(data);
   let userName = data.user.userName;
   console.log(userName)
+
+  const  logoutHandler =() => {
+    console.log("clicked")
+    localStorage.clear();
+    window.location.href = '/';
+}
   return (
     <nav className="navigationbar">
       <div className="nav_icon" onClick={() => openSidebar()}>
@@ -42,9 +48,9 @@ const Navbar = ({ sidebarOpen, openSidebar, name }) => {
             <a class="dropdown-item" href="!#">
               Setting
             </a>
-            <a class="dropdown-item" href="!#">
-              Logout
-            </a>
+            <button class="dropdown-item" onClick={logoutHandler}>
+              Log Out
+            </button>
           </div>
         </div>
         <a href="#!">
