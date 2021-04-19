@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faQuestionCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import axios from 'axios';
+
 const ContactUs = () => {
      const [name, setName] = useState("");
      const [email, setEmail] = useState("");
@@ -10,6 +12,7 @@ const ContactUs = () => {
      const [message, setMessage] = useState("");
      const [projecttitle, setProjectTitle] = useState("");
      const [image, setImage] = useState(null);
+     const [loading, setLoading ] = useState(false);
 
      const toBase64 = file => new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -31,8 +34,12 @@ const ContactUs = () => {
          Proposal.attachment = base64Data;
         //  console.log(Proposal)
          try {
+            setLoading(true);
             const {data}  = await axios.post("http://localhost:5000/api/v1/product/createProduct",Proposal);
-            console.log(data);
+            if (data) {
+                setLoading(false);
+                window.location.href = "/";
+              }
           } catch (error) {
             console.log(error);
           }
@@ -40,7 +47,16 @@ const ContactUs = () => {
     return (
         <div className="container" id="contact">
             <div className="bs">
-            <h1 className="mb-5">Contact Us</h1>
+           <div  className="mb-5">
+              <div className="row">
+              <div className="col-md-6">
+                   <h1>Contact us</h1>
+               </div>
+               <div className="col-md-4">
+               {loading&&(<CircularProgress />)}
+               </div>
+              </div>
+           </div>
             <div class="contact-form">
 					<form onSubmit={submitHandler}>
 						<div class="row">
