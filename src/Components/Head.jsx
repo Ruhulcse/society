@@ -12,6 +12,12 @@ function Head() {
         contact: "CONTACT US",
         signin: "Sign up",
         signup: "Sign in",
+        you: "You",
+        think: "Think It",
+        we: "We Build It",
+        do: "Do you have an idea..",
+        but: "But doesn't know how to build it",
+        learn: "Learn More",
     }:{
         home: "الصفحة الرئيسية",
         service: "الخدمات",
@@ -19,8 +25,23 @@ function Head() {
         contact: "اتصل بنا",
         signin: "تسجيل الدخول",
         signup: "اشتراك",
+        you: "أنت",
+        think: "فكر في ذلك",
+        we: "نحن نبنيها",
+        do: "هل لديك فكرة..",
+        but: "لكن لا يعرف كيف يبنيه",
+        learn: "يتعلم أكثر"
+
+
     };
-  
+   
+   const  onChangeOption=(e)=>{
+        if (e.detail === 0){
+            let Language = e.target.value;
+            Language=='E'?en():ar();
+        }
+    }
+
     return (
         <div className="container-fluid bg" id="home">
              {/* <button onClick={en}>english</button>
@@ -48,9 +69,9 @@ function Head() {
                     <div className="col-md-3 navbar-nav sidenav ml-auto">
                         <a href="/signup" className="nav-item nav-link"  ><section className="naviteml">{nav.signin}</section></a>
                         <a href="/login" className="nav-item nav-link border" ><section className="naviteml">{nav.signup}</section></a>
-                        <select class="opt">
-                        <option>Arabic</option>
-                        <option>English</option>
+                        <select class="opt" name="select1" onClick={onChangeOption}>
+                        <option value='E'>English</option>
+                        <option value='A'>عربى</option>
                         </select>
                     </div>
                 </div>
@@ -61,14 +82,14 @@ function Head() {
              <div className="col-md-12">
                  <div className="slogan">
                      <h1 className="brand">
-                     <span className="">You </span>
-                     <span className="redFont">Think It</span>
+                     <span className="">{nav.you}</span>
+                     <span className="redFont">{nav.think}</span>
                      </h1>
-                     <h1 className="brand">We Build It</h1>
-                     <p className="pstyle">Do you have an idea..</p>
-                     <p className="pstyle">But doesn't know how to build it</p>
+                     <h1 className="brand">{nav.we}</h1>
+                     <p className="pstyle">{nav.do}</p>
+                     <p className="pstyle">{nav.but}</p>
                      <br></br>
-                     <button className="btntop">Learn More</button>
+                     <button className="btntop">{nav.learn}</button>
                  </div>
              </div>
          </div>
