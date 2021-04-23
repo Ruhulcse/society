@@ -6,6 +6,7 @@ import Landing from "./Components/Landing";
 import Admin from "./Components/Admin/App";
 import Users from "./Components/Admin/User";
 import Proposal from "./Components/Admin/Proposal";
+import Project from "./Components/Admin/Project";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { LanguageContextProvider } from "./context/language";
 
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/news" component={FullNews}/>
           <Route exact path="/admin" component={Admin} />
+          <Route exact path="/admin/project" component={Project}/>
           <Route exact path="/admin/users" component={Users} />
           <Route exact path="/admin/proposal" component={Proposal} />
         </Router>

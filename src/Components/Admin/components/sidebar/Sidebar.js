@@ -45,7 +45,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
                 <i className="fas fa-chart-bar icon" aria-hidden="true"></i>
               </div>
               <div className="col-md-10">
-                <a className="white" href="#">
+                <a className="white" href="/admin/project">
                   new project
                 </a>
               </div>
