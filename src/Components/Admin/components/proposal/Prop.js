@@ -9,6 +9,14 @@ const Prop = () => {
   if (!token) {
     window.location.href = "/";
   }
+  
+  const deleteHandler = async(id) =>{
+    console.log(id)
+    const result = await axios.delete(`http://localhost:5000/api/v1/product/deleteProduct/${id}`);
+    if(result){
+      window.location.reload();
+    }
+  }
   useEffect(() => {
     try {
       async function fetchProposalData() {
@@ -53,6 +61,9 @@ const Prop = () => {
                         <a href="#" className="btn cardborder">
                           View
                         </a>
+                        <button className="btn" onClick={()=>deleteHandler(item._id)}>
+                          <i class="fas fa-times"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
