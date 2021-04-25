@@ -7,6 +7,17 @@ import "slick-carousel/slick/slick-theme.css";
 import CircularProgress from '@material-ui/core/CircularProgress'
 import axios from 'axios';
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "red" ,}}
+      onClick={onClick}
+    />
+  );
+}
+
 function ClientProject() {
 
     const [projects,setProjects] = useState([]);
@@ -38,6 +49,8 @@ function ClientProject() {
           slidesToShow: 3,
           slidesToScroll: 1,
           cssEase: "linear",
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SampleNextArrow/>,
           responsive: [
             {
               breakpoint: 1024,
