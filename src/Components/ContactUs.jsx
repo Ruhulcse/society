@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React,{useContext,useState} from 'react'
+import {LanguageContext} from "../context/language"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faQuestionCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import axios from 'axios';
 
 const ContactUs = () => {
+    const{english} = useContext(LanguageContext);
      const [name, setName] = useState("");
      const [email, setEmail] = useState("");
      const [phone, setPhone] = useState("");
@@ -50,7 +52,7 @@ const ContactUs = () => {
            <div  className="mb-5">
               <div className="row">
               <div className="col-md-6">
-                   <h1>Contact us</h1>
+                   <h1>{english?"Contact us":"اتصل بنا"}</h1>
                </div>
                <div className="col-md-4">
                {loading&&(<CircularProgress />)}
@@ -62,7 +64,7 @@ const ContactUs = () => {
 						<div class="row">
 							<div class="input25">
                                 <h6>
-                                    Name
+                                    {english?"Name":"اسم"}
                                     <span>
                                         <abbr title="Enter ypur name">
                                             <FontAwesomeIcon icon={faQuestionCircle} />
@@ -78,7 +80,7 @@ const ContactUs = () => {
 							</div>						
 							<div class="input25">
                                 <h6>
-                                    Email
+                                    {english?"Email":"بريد إلكتروني"}
                                     <span>
                                         <abbr title="Enter valid email">
                                             <FontAwesomeIcon icon={faQuestionCircle} />
@@ -94,7 +96,7 @@ const ContactUs = () => {
 							</div>
 							<div class="input25">
                                 <h6>
-                                    Phone Number
+                                   {english?" Phone Number": "رقم الهاتف"}
                                     <span>
                                         <abbr title="Enter valid phone number">
                                             <FontAwesomeIcon icon={faQuestionCircle} />
@@ -110,7 +112,7 @@ const ContactUs = () => {
 							</div>
                             <div class="input25">
                                 <h6>
-                                    Service
+                                 {english?"Service":"خدمة"}
                                     <span>
                                         <abbr title="Enter ypur desire Service">
                                             <FontAwesomeIcon icon={faQuestionCircle} />
@@ -128,7 +130,7 @@ const ContactUs = () => {
                         <div className="row">
                         <div class="input25">
                                 <h6>
-                                    Project Title
+                                    {english?"Project Title":"عنوان المشروع"}
                                     <span>
                                         <abbr title="Enter project title">
                                             <FontAwesomeIcon icon={faQuestionCircle} />
@@ -146,7 +148,7 @@ const ContactUs = () => {
 						<div class="row">
 							<div class="input60">
                                 <h6>
-                                    Message
+                                    {english?"Message":"رسالة"}
                                     <span>
                                         <abbr title="Enter ypur Message">
                                             <FontAwesomeIcon icon={faQuestionCircle} />
@@ -157,7 +159,7 @@ const ContactUs = () => {
 							</div>
                             <div class="input30">
                                 <h6>
-                                    Idea Proposal (Optional)
+                                    {english?"Idea Proposal (Optional)":"اقتراح فكرة (اختياري)"}
                                     <span>
                                         <abbr title="Valid file format: JPEG / JPG / PNG">
                                             <FontAwesomeIcon icon={faQuestionCircle} />
@@ -174,14 +176,14 @@ const ContactUs = () => {
                                   }}
                                  />
                                 <FontAwesomeIcon icon={faCloudUploadAlt} />
-                                <h6>Drop file here</h6>
-                                <p>or</p>
-                                <p>Select File</p>
+                                <h6>{english?"Drop file here":"قم بإسقاط الملف هنا"}</h6>
+                                <p>{english?"or":"أو"}</p>
+                                <p>{english?"Select File":"حدد ملف"}</p>
 							</div>
 						</div>
 						<div class="row justify-content-center">
 							<div class="input100">
-								<input className="bt" type="submit" value="Send" />
+								<input className="bt" type="submit" value={english?"Send":"إرسال"} />
 							</div>
 						</div>
 					</form>

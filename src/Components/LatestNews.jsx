@@ -1,9 +1,18 @@
-import React, {useState} from 'react';
+import React,{useContext,useState} from 'react'
+import {LanguageContext} from "../context/language"
 import logo from "../../src/assets/img/logo.png"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const LatestNews = () => {
+    const{english} = useContext(LanguageContext);
+    const newsection = english?{
+        title:"Our Latest News",
+        button: "Read More"
+    }:{
+        title: "آخر أخبارنا",
+        button: "اقرأ أكثر"
+    }
     const [latestNews, setLatestNews] = useState({
         activeNews: null,
         news: [
@@ -47,7 +56,7 @@ const LatestNews = () => {
         return (
             <div className="newsSection">
                 <div className="container">
-                    <h2 className="newsSection-title">Our Latest News</h2>
+                    <h2 className="newsSection-title">{newsection.title}</h2>
                     <div className="news-container">
                         {
                             latestNews.news.map((news,index )=> 
@@ -58,7 +67,7 @@ const LatestNews = () => {
                                 </div>
                                 <div className="news-content">
                                     <p>{news.news_primary} <span className={toggleActiveStyles(index)} >{news.news_all}</span></p>
-                                <a href="/news" className="read-more"  > Read More <FontAwesomeIcon icon={faPlus} /></a>
+                                <a href="/news" className="read-more">{newsection.button}<FontAwesomeIcon icon={faPlus} /></a>
                                 </div>
                             </div>
                             )
