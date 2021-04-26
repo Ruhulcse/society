@@ -11,15 +11,15 @@ import Work from './Work';
 function Landing() {
     return (
         <>
-            {/* <Head/> */}
+            <Head/>
             <About/>
             <Service/>
             <Work/>
-            {/* <Choose/> */}
+            <Choose/>
             <LatestProject/>
             <LatestNews/> 
-            {/* <ContactUs/>
-            <Footer/> */}
+            <ContactUs/>
+            <Footer/>
         </>
     )
 }

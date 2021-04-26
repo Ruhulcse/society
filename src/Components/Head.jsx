@@ -1,7 +1,6 @@
 import React ,{useContext}from 'react'
 import {LanguageContext} from "../context/language"
 import logo from "../assets/img/newlogo.png";
-import coolDesign  from "../assets/img/Cool Design.png";
 function Head() {
     const{english,en,ar} = useContext(LanguageContext);
 
