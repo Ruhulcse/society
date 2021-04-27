@@ -10,23 +10,20 @@ function NewsEditor() {
   const [videourl, setVideoUrl ] = useState("");
 
   const submitHandler =async (e) =>{
-    console.log(text);
-    console.log(title);
-    console.log(videourl);
+ 
     e.preventDefault();
-  //   const base64Data= await toBase64(imageurl);
-
-  //   const ProjectData = {};
-  //   ProjectData.title = title;
-  //   ProjectData.projecturl = projecturl;
-  //   ProjectData.partnerproject = partnerproject;
-  //   ProjectData.imageurl = base64Data;
-  //   try {
-  //    const data  = await axios.post("http://localhost:5000/api/v1/projects/createProejct",ProjectData);
-  //    console.log(data);
-  //  } catch (error) {
-  //    console.log(error);
-  //  }
+   
+    const NewsData = {};
+    NewsData.title = title;
+    NewsData.videourl = videourl;
+    NewsData.text = text;
+  
+    try {
+     const data  = await axios.post("http://localhost:5000/api/v1/news/createNews",NewsData);
+     console.log(data);
+   } catch (error) {
+     console.log(error);
+   }
 }
   return (
       <main>
