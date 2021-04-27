@@ -7,6 +7,7 @@ import Admin from "./Components/Admin/App";
 import Users from "./Components/Admin/User";
 import Proposal from "./Components/Admin/Proposal";
 import Project from "./Components/Admin/Project";
+import News from "./Components/Admin/News"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { LanguageContextProvider } from "./context/language";
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/admin/project" component={Project}/>
           <Route exact path="/admin/users" component={Users} />
           <Route exact path="/admin/proposal" component={Proposal} />
+          <Route exact path="/admin/news" component={News} />
         </Router>
       </LanguageContextProvider>
     </>
