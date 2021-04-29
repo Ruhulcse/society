@@ -19,26 +19,40 @@ function SampleNextArrow(props) {
   }
 
 function OurProject() {
-    const [projects,setProjects] = useState([]);
+    // const [projects,setProjects] = useState([]);
     const [loading, setLoading ] = useState(false);
+    const projects = [
+      {
+        title: "hello"
+      },
+      {
+        title: "hello"
+      },
+      {
+        title: "hello"
+      },
+      {
+        title: "hello"
+      },
+    ]
  
-    useEffect(() => {
-      try {
-        async function fetchprojectData() {
-          setLoading(true);
-          const {data } = await axios.get("http://localhost:5000/api/v1/projects/getAllProject",);
-          let partnerProjects = data.filter(item => item.partnerproject==false);
-          console.log(partnerProjects);
-          setProjects(data);
-          if(data){
-            setLoading(false);
-          }
-        }
-        fetchprojectData();
-      } catch (error) {
-        console.log(error);
-      }
-    }, []);
+    // useEffect(() => {
+    //   try {
+    //     async function fetchprojectData() {
+    //       setLoading(true);
+    //       const {data } = await axios.get("http://localhost:5000/api/v1/projects/getAllProject",);
+    //       let partnerProjects = data.filter(item => item.partnerproject==false);
+    //       console.log(partnerProjects);
+    //       setProjects(data);
+    //       if(data){
+    //         setLoading(false);
+    //       }
+    //     }
+    //     fetchprojectData();
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }, []);
 
   
       let settings = {
