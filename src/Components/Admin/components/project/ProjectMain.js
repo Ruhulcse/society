@@ -29,6 +29,7 @@ function ProjectMain() {
          ProjectData.projecturl = projecturl;
          ProjectData.partnerproject = partnerproject;
          ProjectData.imageurl = base64Data;
+         console.log(ProjectData)
          try {
           const data  = await axios.post("http://localhost:5000/api/v1/projects/createProejct",ProjectData);
           console.log(data);

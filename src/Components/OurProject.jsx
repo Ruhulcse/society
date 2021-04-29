@@ -1,11 +1,12 @@
 import React, { useState,useEffect } from 'react';
-import project1 from "../assets/img/test.PNG";
-import project2 from "../assets/img/Screenshot -2.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import CircularProgress from '@material-ui/core/CircularProgress'
+import "slick-carousel/slick/slick-theme.css"
+import { makeStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import axios from 'axios';
+import {URL} from "../Utils/TokenConfig"
+
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -19,17 +20,17 @@ function SampleNextArrow(props) {
   }
 
 function OurProject() {
-    const [projects,setProjects] = useState([]);
+
+    const [ourprojects,setProjects] = useState([]);
     const [loading, setLoading ] = useState(false);
  
     useEffect(() => {
       try {
         async function fetchprojectData() {
           setLoading(true);
-          const {data } = await axios.get("http://localhost:5000/api/v1/projects/getAllProject",);
-          let partnerProjects = data.filter(item => item.partnerproject==false);
-          console.log(partnerProjects);
-          setProjects(data);
+          const {data } = await axios.get(`${URL}api/v1/projects/getAllProject`,);
+          let ourprojects = data.filter(item => item.partnerproject==false);
+          setProjects(ourprojects);
           if(data){
             setLoading(false);
           }
@@ -43,7 +44,7 @@ function OurProject() {
   
       let settings = {
           
-          infinite: true,
+          // infinite: true,
           speed: 500,
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -79,15 +80,17 @@ function OurProject() {
       }
     return (
         <div className="container-fluid">
-         {loading?( <CircularProgress/>
+         {loading?( <div className=" pt-2">
+         <LinearProgress />
+         </div>
          ):(
             <Slider {...settings}>
-            {projects.map((item)=>(
+            {ourprojects.map((item)=>(
                <div className="col-md-10  pt-5 ">
-               <img src={project1}  className="img-fluid" alt="not found"/>
+               <img src={`${URL}${item.imageurl}`}  className="img-fluid" alt="not found"/>
                <div class="firstpic">
                <h4 className="text-center">{item.title}</h4>
-               <a href="www.google.com"  className="firstlink">Check Project&#8811;</a>
+               <a href={item.projecturl}  className="firstlink">Check Project&#8811;</a>
            </div>
            </div>
             ))}

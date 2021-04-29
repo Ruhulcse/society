@@ -1,11 +1,11 @@
 import React, { useState,useEffect } from 'react';
-import project1 from "../assets/img/test.PNG";
-import project2 from "../assets/img/Screenshot -2.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CircularProgress from '@material-ui/core/CircularProgress'
+import { makeStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import axios from 'axios';
+import {URL} from "../Utils/TokenConfig"
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -20,17 +20,16 @@ function SampleNextArrow(props) {
 
 function ClientProject() {
 
-    const [projects,setProjects] = useState([]);
+    const [clientprojects,setProjects] = useState([]);
     const [loading, setLoading ] = useState(false);
  
     useEffect(() => {
       try {
         async function fetchprojectData() {
           setLoading(true);
-          const {data } = await axios.get("http://localhost:5000/api/v1/projects/getAllProject",);
+          const {data } = await axios.get(`${URL}api/v1/projects/getAllProject`,);
           let partnerProjects = data.filter(item => item.partnerproject==true);
-          console.log(partnerProjects);
-          setProjects(data);
+          setProjects(partnerProjects);
           if(data){
             setLoading(false);
           }
@@ -78,16 +77,19 @@ function ClientProject() {
             }
           ]
       }
+
     return (
       <div className="container-fluid">
-         {loading?(<CircularProgress/>):(
+         {loading?( <div className=" pt-2">
+         <LinearProgress />
+         </div>):(
             <Slider {...settings}>
-            {projects.map((item)=>(
+            {clientprojects.map((item)=>(
                <div className="col-md-10  pt-5 ">
-               <img src={project1}  className="img-fluid" alt="not found"/>
+               <img src={`${URL}${item.imageurl}`}  className="img-fluid" alt="not found"/>
                <div class="firstpic">
                <h4 className="text-center">{item.title}</h4>
-               <a href="www.google.com"  className="firstlink">Check Project&#8811;</a>
+               <a href={item.projecturl}  className="firstlink">Check Project&#8811;</a>
            </div>
            </div>
             ))}
