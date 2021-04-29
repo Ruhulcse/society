@@ -23,6 +23,20 @@ function OurProject() {
 
     const [ourprojects,setProjects] = useState([]);
     const [loading, setLoading ] = useState(false);
+    const projects = [
+      {
+        title: "hello"
+      },
+      {
+        title: "hello"
+      },
+      {
+        title: "hello"
+      },
+      {
+        title: "hello"
+      },
+    ]
  
     useEffect(() => {
       try {

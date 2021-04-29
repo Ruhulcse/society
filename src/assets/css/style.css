@@ -17,6 +17,14 @@
 	width: 100%;
 	/* height: ; */
 }
+@media screen and (max-width: 321px){
+	.bg {
+		background-color: #523d3f;
+		background-image: url("../img/Background.png");
+		width: 108%;
+		/* height: ; */
+	}
+}
 .navitem {
 	color: #898285;
 	/* font-size: 21px; */
@@ -75,6 +83,13 @@
 	font-size: 98px;
 	font-weight: bold;
 	font-family: 'Poppins', sans-serif;
+}
+@media screen and (max-width: 415px){
+	.brand {
+		font-size: 56px;
+		font-weight: bold;
+		font-family: 'Poppins', sans-serif;
+	}
 }
 .pstyle{
 	    font-weight: bold;
@@ -590,7 +605,7 @@ small {
 	margin-bottom: 50px;
 }
 
-.news-container {
+.news-newcontent {
 	display: flex;
 	flex-wrap: wrap;
 }
