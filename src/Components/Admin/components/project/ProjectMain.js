@@ -1,12 +1,15 @@
 import React, { useState,useEffect } from 'react';
 import "./project.css";
 import axios from 'axios';
+import CircularProgress from '@material-ui/core/CircularProgress'
+
 function ProjectMain() {
 
     const [title, SetTitle ] = useState("");
     const [projecturl, setProjectUrl ] = useState("");
     const [imageurl, setImageUrl] = useState(null);
     const [partnerproject, setPartnerProject] = useState(false);
+    const [loading, setLoading ] = useState(false);
 
     //for changing the check status
     const handleClick = () => setPartnerProject(!partnerproject)
@@ -23,16 +26,18 @@ function ProjectMain() {
 
          e.preventDefault();
          const base64Data= await toBase64(imageurl);
-
          const ProjectData = {};
          ProjectData.title = title;
          ProjectData.projecturl = projecturl;
          ProjectData.partnerproject = partnerproject;
          ProjectData.imageurl = base64Data;
-         console.log(ProjectData)
          try {
+          setLoading(true);
           const data  = await axios.post("http://localhost:5000/api/v1/projects/createProejct",ProjectData);
-          console.log(data);
+          if(data){
+            setLoading(false);
+            window.location.href = "/admin";
+          }
         } catch (error) {
           console.log(error);
         }
@@ -43,6 +48,7 @@ function ProjectMain() {
          <div className="main__container">
             <div className="row">
             <div className="col-md-12">
+            {loading&&(<CircularProgress />)}
               <div className="card mt-5 mr-2 ml-2">
                 <div className="card-body ml-2 mr-2">
                     <h1>Edit Post</h1>
