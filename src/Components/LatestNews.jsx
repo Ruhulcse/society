@@ -164,8 +164,12 @@ const LatestNews = () => {
             //             }
             //         </div>
             //     </div>
-            // </div>
+            // </div> 
+            <div className="newsSection">
              <div className="container">
+              <div className="d-flex justify-content-center pt-5jjnn">
+              <h1 className="justify-content-center">Latest News</h1>
+              </div>
              {loading?( <CircularProgress/>
              ):(
                 <Slider {...settings}>
@@ -178,14 +182,14 @@ const LatestNews = () => {
                    </div>
                    <div className="news-content">
                         <p>{parse(item.text.substring(0,100)+'...')}</p>
-                        <a href={`/news/?id=${item._id}`} className="read-more">{newsection.button}<FontAwesomeIcon icon={faPlus} /></a>
+                        <a href={`/news/?id=${item._id}`} className="read-more"  target="_blank">{newsection.button}<FontAwesomeIcon icon={faPlus}/></a>
                     </div>
                </div>
                 ))}
                </Slider>
              )}
           </div>
-        
+          </div>
         );
     };
 
