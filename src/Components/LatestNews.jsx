@@ -1,4 +1,4 @@
-import React,{useContext,useState} from 'react'
+import React,{useContext,useState,useEffect} from 'react'
 import {LanguageContext} from "../context/language"
 import logo from "../../src/assets/img/logo.png"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -7,6 +7,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CircularProgress from '@material-ui/core/CircularProgress'
+import axios from 'axios';
+import parse from "html-react-parser"
+import {URL} from "../Utils/TokenConfig"
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -20,8 +23,11 @@ function SampleNextArrow(props) {
   }
 
 const LatestNews = () => {
-    const{english} = useContext(LanguageContext);
+
+    const {english} = useContext(LanguageContext);
     const [loading, setLoading ] = useState(false);
+    const [news, setNews ] = useState([]);
+
     const newsection = english?{
         title:"Our Latest News",
         button: "Read More"
@@ -29,6 +35,23 @@ const LatestNews = () => {
         title: "آخر أخبارنا",
         button: "اقرأ أكثر"
     }
+
+    useEffect(() => {
+      try {
+        async function fetchprojectData() {
+          setLoading(true);
+          const {data } = await axios.get(`${URL}api/v1/news/getAllNews`,);
+          console.log(data)
+          if(data){
+            setNews(data)
+            setLoading(false);
+          }
+        }
+        fetchprojectData();
+      } catch (error) {
+        console.log(error);
+      }
+    }, []);
     const [latestNews, setLatestNews] = useState({
         activeNews: null,
         news: [
@@ -146,16 +169,16 @@ const LatestNews = () => {
              {loading?( <CircularProgress/>
              ):(
                 <Slider {...settings}>
-                {latestNews.news.map((news,index)=>(
+                {news.map((item,index)=>(
                    <div className="col-md-10 news-card">
                        
-                   <img src={news.img}  className="img-fluid" alt="not found"/>
+                   <img src={`${URL}${item.image}`}  className="img-fluid" alt="not found"/>
                    <div className="news-title">
-                     <h3>{news.title}</h3>
+                     <h3>{item.title}</h3>
                    </div>
                    <div className="news-content">
-                        <p>{news.news_primary} <span className={toggleActiveStyles(index)} >{news.news_all}</span></p>
-                        <a href="/news" className="read-more">{newsection.button}<FontAwesomeIcon icon={faPlus} /></a>
+                        <p>{parse(item.text.substring(0,100)+'...')}</p>
+                        <a href={`/news/?id=${item._id}`} className="read-more">{newsection.button}<FontAwesomeIcon icon={faPlus} /></a>
                     </div>
                </div>
                 ))}
