@@ -9,19 +9,22 @@ const Login = () => {
     const [loading, setLoading ] = useState(false);
     const [worngpass, setWrongpass] = useState(false);
     const onSubmit = async (data) => {
-        console.log(data);
+        // console.log(data);
         const loginData = {};
         loginData.email = data.email;
         loginData.password = data.password;
         try {
             setLoading(true);
-            const {data}  = await axios.post("http://localhost:5000/api/v1/users/login",loginData);
-            console.log(data);
+            const {data} = await axios.post("http://localhost:5000/api/v1/users/login",loginData);
+            if(data==="wrong"){
+                setLoading(false);
+                setWrongpass(true);
+            }
             if (data) {
                 setLoading(false);
-                localStorage.setItem("user", JSON.stringify(data));
-                localStorage.setItem("token", data.token);
-                window.location.href = "/admin";
+                // localStorage.setItem("user", JSON.stringify(data));
+                // localStorage.setItem("token", data.token);
+                // window.location.href = "/admin";
               }
           } catch (error) {
             console.log(error);
@@ -32,7 +35,7 @@ const Login = () => {
         <div className="login-page">
             <div className="login-form">
                 <h1 className="title">{loading?<CircularProgress />:<p>User Login</p>}</h1>
-                
+                {worngpass&&(<p>invalid username or password</p>)}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="email-pass">
                         <input type="email" name="email" placeholder="Email Address" ref={register}/>
