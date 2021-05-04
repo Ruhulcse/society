@@ -11,7 +11,6 @@ const Prop = () => {
   }
   
   const deleteHandler = async(id) =>{
-    console.log(id)
     const result = await axios.delete(`http://localhost:5000/api/v1/product/deleteProduct/${id}`);
     if(result){
       window.location.reload();
@@ -22,7 +21,6 @@ const Prop = () => {
       async function fetchProposalData() {
         const data  = await axios.get("http://localhost:5000/api/v1/product/getProduct",);
         let proposal = data.data.products.mAllProduct;
-        console.log(proposal)
         SetProposals(proposal);
       }
       fetchProposalData();
@@ -58,7 +56,7 @@ const Prop = () => {
                         />
                       </div>
                       <div className="pt-5">
-                        <a href="#" className="btn cardborder">
+                        <a href={`/admin/proposal/view/?id=${item._id}`} className="btn cardborder">
                           View
                         </a>
                         <button className="btn" onClick={()=>deleteHandler(item._id)}>

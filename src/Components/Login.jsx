@@ -22,9 +22,9 @@ const Login = () => {
             }
             if (data) {
                 setLoading(false);
-                // localStorage.setItem("user", JSON.stringify(data));
-                // localStorage.setItem("token", data.token);
-                // window.location.href = "/admin";
+                localStorage.setItem("user", JSON.stringify(data));
+                localStorage.setItem("token", data.token);
+                window.location.href = "/admin";
               }
           } catch (error) {
             console.log(error);

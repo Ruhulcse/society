@@ -567,8 +567,10 @@ small {
 }
 
 .row span {
-	padding-left: 10px;
-	color: #dddcdc;
+	/* padding-left: 10px;
+	color: #dddcdc; */
+	padding-left: 0px;
+	color: #0c0b0b;
 }
 
 @media (max-width: 1068px) {
