@@ -15,7 +15,7 @@ const stepsWithLabel = [
 const ProposalView = ({location}) => {
 
     const [value, setValue] = useState(1);
-
+    const [details, setDetails] = useState("");
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
@@ -34,9 +34,10 @@ const ProposalView = ({location}) => {
   useEffect(() => {
     try {
       async function fetchProposalData() {
-        const data  = await axios.get(`http://localhost:5000/api/v1/product/getProduct/${id}`);
-        let proposal = data.data.products.mAllProduct;
-        console.log(proposal)
+        const {data}  = await axios.get(`http://localhost:5000/api/v1/product/getSinglProduct/${id}`);
+        setDetails(data.description);
+        // let proposal = data.data.products.mAllProduct;
+        // console.log(proposal)
       }
       fetchProposalData();
     } catch (error) {
@@ -48,8 +49,12 @@ const ProposalView = ({location}) => {
       <div className="main__container">
         <div className="row">
             <div className="col-md-10 bg-white">
-                <p>hello i am from bangladesh</p>
-                <Stepper value={value} onChange={handleChange} items={stepsWithLabel} />
+                <h2 className="pl-2">Details</h2>
+                <p className="pl-2">{details}</p>
+                <Stepper className="pt-5 pb-5"  value={value} onChange={handleChange} items={stepsWithLabel} />
+            </div>
+            <div className="col-md-2 bg-white">
+                will be a button
             </div>
         </div>
       </div>
