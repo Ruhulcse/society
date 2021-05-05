@@ -197,6 +197,10 @@ main {
     border: 1px solid black;
     border-radius: 20%;
   }
+  .updateborder{
+    border: 1px solid black;
+    border-radius: 20%;
+  }
   .gray{
       color: gray;
   }
