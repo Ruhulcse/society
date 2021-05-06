@@ -4,7 +4,7 @@ import "./index.css";
 import Propview from "./components/proposal/ProposalView"
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
-
+import {Helmet} from 'react-helmet';
 const Proposal = () => {
   const [sidebarOpen, setsidebarOpen] = useState(false);
   const openSidebar = () => {
@@ -15,6 +15,9 @@ const Proposal = () => {
   };
   return (
     <div className="contain">
+      <Helmet>
+        <title>Dashboard || proposal details</title>
+      </Helmet>
       <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} name="Proposal"/>
       <Propview/>
       <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />

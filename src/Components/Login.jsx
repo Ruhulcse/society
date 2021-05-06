@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 import {useForm} from 'react-hook-form';
 import CircularProgress from '@material-ui/core/CircularProgress'
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 
 const Login = () => {
     const {register, handleSubmit} = useForm();
@@ -33,6 +34,9 @@ const Login = () => {
 
     return (
         <div className="login-page">
+            <Helmet>
+              <title>Asociety || Login</title>
+            </Helmet>
             <div className="login-form">
                 <h1 className="title">{loading?<CircularProgress />:<p>User Login</p>}</h1>
                 {worngpass&&(<p>invalid username or password</p>)}

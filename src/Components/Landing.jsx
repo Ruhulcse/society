@@ -8,9 +8,14 @@ import Choose from './Choose'
 import LatestNews from './LatestNews';
 import Service from './Service';
 import Work from './Work';
+import {Helmet} from 'react-helmet';
+
 function Landing() {
     return (
         <>
+            <Helmet>
+              <title>Asociety</title>
+            </Helmet>
             <Head/>
             <About/>
             <Service/>

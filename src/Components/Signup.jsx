@@ -12,7 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
-
+import {Helmet} from 'react-helmet'
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(3),
@@ -81,6 +81,9 @@ function Signup({history}) {
 
   return (
       <div className="signin-page">
+        <Helmet>
+            <title>Asociety || Sign up</title>
+        </Helmet>
     <Container className="signin-form" component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
