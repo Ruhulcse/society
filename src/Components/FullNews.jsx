@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress'
 import parse from "html-react-parser"
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 
 function FullNews({location}) {
     const [news,setNews] = useState(null);
@@ -10,6 +11,7 @@ function FullNews({location}) {
     const [loading, setLoading ] = useState(false);
     const searchParams = new URLSearchParams(location.search);
     let id = searchParams.get("id");
+  
     useEffect(() => {
         try {
           async function fetchprojectData() {
@@ -31,6 +33,9 @@ function FullNews({location}) {
     return (
         <div>
           <div class="container">
+          <Helmet>
+            <title>Asociety || news</title>
+          </Helmet>
            {loading?(<CircularProgress/>):(
               <div>
                 <h1 class="newspaper-title">{title}</h1>
