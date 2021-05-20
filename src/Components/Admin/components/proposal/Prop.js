@@ -43,7 +43,7 @@ const Prop = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [userType, email]);
   return (
     <main>
       <div className="main__container">

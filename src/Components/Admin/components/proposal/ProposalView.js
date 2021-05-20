@@ -50,7 +50,7 @@ const ProposalView = ({ location }) => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [id]);
   return (
     <main>
       <div className="main__container">
@@ -67,12 +67,12 @@ const ProposalView = ({ location }) => {
               />
             </div>
             <div className="col-md-2 bg-white">
-              <a
+              <button
                 className="btn updateborder"
                 style={{ marginLeft: "15%", marginTop: "8%" }}
               >
                 update
-              </a>
+              </button>
             </div>
           </div>
           {loading ? (

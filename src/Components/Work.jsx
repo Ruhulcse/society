@@ -33,39 +33,39 @@ function Work() {
                 <div className="col-md-4 " style={{paddingLeft:"5%",paddingTop:"4%"}}>
                  <div className="">
                    <p>
-                    <a class="btn abtn" data-toggle="collapse" href="#oneExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <a className="btn abtn" data-toggle="collapse" href="#oneExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         1
                     </a>
                     <span className="sp">{work.step1}</span>
                     </p>
-                    <div class="collapse" id="oneExample">
-                    <div class="card card-body">
+                    <div className="collapse" id="oneExample">
+                    <div className="card card-body">
                        {work.details}
                     </div>
                     </div>
                  </div>
                  <div className="">
                    <p>
-                     <a class="btn abtn" data-toggle="collapse" href="#twoExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                     <a className="btn abtn" data-toggle="collapse" href="#twoExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         2
                     </a>
                    <span className="sp">{work.step2}</span>
                     </p>
-                    <div class="collapse" id="twoExample">
-                    <div class="card card-body">
+                    <div className="collapse" id="twoExample">
+                    <div className="card card-body">
                        {work.details}
                     </div>
                     </div>
                  </div>
                  <div className="">
                    <p>
-                    <a class="btn abtn" data-toggle="collapse" href="#threeExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <a className="btn abtn" data-toggle="collapse" href="#threeExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         3
                     </a>
                     <span className="sp">{work.step3}</span>
                     </p>
-                    <div class="collapse" id="threeExample">
-                    <div class="card card-body">
+                    <div className="collapse" id="threeExample">
+                    <div className="card card-body">
                        {work.details}
                     </div>
                     </div>
@@ -73,8 +73,8 @@ function Work() {
                 </div>
                 <div className="col-md-8 pl-5" style={{paddingRight:"8%"}}>
                     <div className="video_box">
-                    <div class="videoWrapper">
-                      <iframe width="560" height="349" src="https://www.youtube.com/embed/6tkaatkbC2Y" frameborder="0" allowfullscreen></iframe>
+                    <div className="videoWrapper">
+                      <iframe width="560" height="349" src="https://www.youtube.com/embed/6tkaatkbC2Y" title="video" frameBorder="0" allowFullScreen></iframe>
                       </div>
                     </div>
                 </div>

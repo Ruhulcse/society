@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import axios from 'axios';
 import {URL} from "../Utils/TokenConfig"
@@ -28,7 +28,7 @@ function ClientProject() {
         async function fetchprojectData() {
           setLoading(true);
           const {data } = await axios.get(`${URL}api/v1/projects/getAllProject`,);
-          let partnerProjects = data.filter(item => item.partnerproject==true);
+          let partnerProjects = data.filter(item => item.partnerproject===true);
           setProjects(partnerProjects);
           if(data){
             setLoading(false);
@@ -89,7 +89,7 @@ function ClientProject() {
                <img src={`${URL}${item.imageurl}`}  className="img-fluid" style={{width:"100%",height:"247px"}} alt="not found"/>
                <div class="firstpic">
                <h4 className="text-center">{item.title}</h4>
-               <a href={item.projecturl}  className="firstlink" target="_blank">Check Project&#8811;</a>
+               <a href={item.projecturl}  className="firstlink" target="blank">Check Project&#8811;</a>
            </div>
            </div>
             ))}

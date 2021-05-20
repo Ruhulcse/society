@@ -37,7 +37,7 @@ function Head() {
    const  onChangeOption=(e)=>{
         if (e.detail === 0){
             let Language = e.target.value;
-            Language=='E'?en():ar();
+            Language==='E'?en():ar();
         }
     }
 
@@ -55,7 +55,7 @@ function Head() {
              </div>
              <div className="col-md-9">
              <nav className="navbar navbar-expand-md navbar-light ">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse ml-2" id="navbarCollapse">
@@ -68,7 +68,7 @@ function Head() {
                     <div className="col-md-3 navbar-nav sidenav ml-auto">
                         <a href="/signup" className="nav-item nav-link"  ><section className="naviteml">{nav.signin}</section></a>
                         <a href="/login" className="nav-item nav-link border" ><section className="naviteml">{nav.signup}</section></a>
-                        <select class="opt" name="select1" onClick={onChangeOption}>
+                        <select className="opt" name="select1" onClick={onChangeOption}>
                         <option value='E'>English</option>
                         <option value='A'>عربى</option>
                         </select>

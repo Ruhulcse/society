@@ -7,7 +7,7 @@ import {URL} from "../Utils/TokenConfig"
 import logo from "../assets/img/newlogo.png";
 
 function FullNews({location}) {
-    const [news,setNews] = useState(null);
+    // const [news,setNews] = useState(null);
     const [title,setTitle ] = useState("");
     const [details, setDetails ] = useState("");
     const [loading, setLoading ] = useState(false);
@@ -25,7 +25,7 @@ function FullNews({location}) {
             setTitle(data.title);
             setDetails(data.text);
             setImageUrl(data.image);
-            setNews(data);
+            //setNews(data);
             if(data){
               setLoading(false);
             }
@@ -34,7 +34,7 @@ function FullNews({location}) {
         } catch (error) {
           console.log(error);
         }
-      }, []);
+      }, [id]);
   
     return (
         <div>

@@ -67,7 +67,7 @@ function Signup({history}) {
       error = (term!=="agree" ? true : false)
 
       try {
-        if(error==false){
+        if(error===false){
           setLoading(true);
           const {data}  = await axios.post(`${URL}api/v1/users/signup`,user);
         if(data.token!=null){
@@ -173,14 +173,14 @@ function Signup({history}) {
               />
             </Grid>
             <Grid item xs={12}>
-            {confirm.length>0&&password.length>0&&(password!=confirm)&&( <p  style={{color: "#fbff00"}}>Password is not matched</p>)}
+            {confirm.length>0&&password.length>0&&(password!==confirm)&&( <p  style={{color: "#fbff00"}}>Password is not matched</p>)}
               <FormControlLabel
                 control={<Checkbox name="tc" value="agree" color="primary" inputRef={register} />}
                 label="I agree with terms and conditions."
               />
             </Grid>
           </Grid>
-          {term!="agree" &&(term.length>0) &&( <p  style={{color: "#fbff00"}}>Accept Term and condition</p>)}
+          {term!=="agree" &&(term.length>0) &&( <p  style={{color: "#fbff00"}}>Accept Term and condition</p>)}
           <Grid container justify="center">
             <Grid item>
           <Button

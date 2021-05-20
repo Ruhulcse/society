@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import "./index.css";
-import Main from "./components/main/Main";
+// import Main from "./components/main/Main";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import { Helmet } from "react-helmet";

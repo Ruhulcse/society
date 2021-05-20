@@ -1,6 +1,6 @@
 import React,{useContext,useState,useEffect} from 'react'
 import {LanguageContext} from "../context/language"
-import logo from "../../src/assets/img/logo.png"
+// import logo from "../../src/assets/img/logo.png"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import Slider from "react-slick";
@@ -52,60 +52,60 @@ const LatestNews = () => {
         console.log(error);
       }
     }, []);
-    const [latestNews, setLatestNews] = useState({
-        activeNews: null,
-        news: [
-        {
-            id: 1,
-            img: logo,
-            title: "Abdulmalek A-Society New Idea",
-            news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
-            news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
-        },
-        {
-            id: 2,
-            img: logo,
-            title: "Get to know more about us?",
-        news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
-            news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
-        },
-        {
-            id: 3,
-            img: logo,
-            title: "we will soon Lunch our system",
-            news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
-            news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
-        },
-        {
-            id: 4,
-            img: logo,
-            title: "we will soon Lunch our system",
-            news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
-            news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
-        },
-        {
-            id: 5,
-            img: logo,
-            title: "we will soon Lunch our system",
-            news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
-            news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
-        },
-    ]
-    })
+    // const [latestNews, setLatestNews] = useState({
+    //     activeNews: null,
+    //     news: [
+    //     {
+    //         id: 1,
+    //         img: logo,
+    //         title: "Abdulmalek A-Society New Idea",
+    //         news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
+    //         news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
+    //     },
+    //     {
+    //         id: 2,
+    //         img: logo,
+    //         title: "Get to know more about us?",
+    //     news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
+    //         news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
+    //     },
+    //     {
+    //         id: 3,
+    //         img: logo,
+    //         title: "we will soon Lunch our system",
+    //         news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
+    //         news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
+    //     },
+    //     {
+    //         id: 4,
+    //         img: logo,
+    //         title: "we will soon Lunch our system",
+    //         news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
+    //         news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
+    //     },
+    //     {
+    //         id: 5,
+    //         img: logo,
+    //         title: "we will soon Lunch our system",
+    //         news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
+    //         news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
+    //     },
+    // ]
+    // })
 
-    const [fullNews, setFullNews] = useState(true)
+    // const [fullNews, setFullNews] = useState(true)
 
 
-        function toggleActive(index){
-            setLatestNews({...latestNews, activeNews: latestNews.news[index]})
-            setFullNews(!fullNews)
-        }
+        // function toggleActive(index){
+        //     setLatestNews({...latestNews, activeNews: latestNews.news[index]})
+        //     setFullNews(!fullNews)
+        // }
 
-        function toggleActiveStyles(index){
-            if(latestNews.news[index] === latestNews.activeNews ){
-                return `active ${fullNews}`;
-            } else  return "none";
-        }
+        // function toggleActiveStyles(index){
+        //     if(latestNews.news[index] === latestNews.activeNews ){
+        //         return `active ${fullNews}`;
+        //     } else  return "none";
+        // }
 
         let settings = {
           
@@ -182,7 +182,7 @@ const LatestNews = () => {
                    </div>
                    <div className="news-content">
                         <p>{parse(item.text.substring(0,100)+'...')}</p>
-                        <a href={`/news/?id=${item._id}`} className="read-more"  target="_blank">{newsection.button}<FontAwesomeIcon icon={faPlus}/></a>
+                        <a href={`/news/?id=${item._id}`} className="read-more"  target="blank">{newsection.button}<FontAwesomeIcon icon={faPlus}/></a>
                     </div>
                </div>
                 ))}

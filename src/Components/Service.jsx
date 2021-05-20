@@ -85,8 +85,8 @@ function Service() {
       }
    ]
     return (  
-        <div class="card sbg" id="service">
-        <div class="card-body box">
+        <div className="card sbg" id="service">
+        <div className="card-body box">
             <div className="container">
                <div className="d-flex justify-content-center">
                    <h1>{brand.title}</h1>
@@ -99,7 +99,7 @@ function Service() {
                </div>
                <div className="row pt-5">
                   {service.map((item)=>(
-                        <div class="col-sm-6 col-md-4 col-lg-4">
+                        <div className="col-sm-6 col-md-4 col-lg-4">
                         <div className="d-flex justify-content-center">
                            <div>
                            <div className="square">
