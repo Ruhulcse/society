@@ -5,9 +5,10 @@ import axios from 'axios';
 import {Helmet} from 'react-helmet';
 import {URL} from "../Utils/TokenConfig"
 import logo from "../assets/img/newlogo.png";
+import Footer from "./Footer";
 
 function FullNews({location}) {
-    // const [news,setNews] = useState(null);
+    const [news,setNews] = useState(null);
     const [title,setTitle ] = useState("");
     const [details, setDetails ] = useState("");
     const [loading, setLoading ] = useState(false);
@@ -25,7 +26,7 @@ function FullNews({location}) {
             setTitle(data.title);
             setDetails(data.text);
             setImageUrl(data.image);
-            //setNews(data);
+            setNews(data);
             if(data){
               setLoading(false);
             }
@@ -38,12 +39,12 @@ function FullNews({location}) {
   
     return (
         <div>
-          <div class="container">
+          <div class="container-fluid pb-5">
           <Helmet>
             <title>Asociety || news</title>
           </Helmet>
            {loading?(<CircularProgress/>):(
-              <div className=" container">
+              <div className="container-fluid">
                   <div className="row pb-5" style={{backgroundColor: "#5a3e3e"}}>
                     <div className="col-md-3">
                         <div>
@@ -72,14 +73,18 @@ function FullNews({location}) {
                     </nav>
                     </div>
                 </div>
-                <h1 class="newspaper-title pt-5 pb-2 " style={{textAlign:"center"}}>{title}</h1>
-                <article class="main-article">
+                <h1 class="newspaper-title pt-5 pb-2 container">{title}</h1>
+                <p className="container">Posted by: Admin</p>
+                {news&& <p className="container">Published Date: {news.createdAt.slice(0,9)}</p>}
+                <hr className="container"></hr>
+                <article class="main-article container">
                 <img src={`${URL}${imageurl}`}  className="img-fluid" style={{width:"100%",height:"100%"}} alt="not found"/>
                 <p className="pt-5">{parse(details)}</p>
                  </article>
               </div>
            )}
             </div>
+            <Footer/>
         </div>
     )
 }
