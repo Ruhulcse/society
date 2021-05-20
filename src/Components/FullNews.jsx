@@ -12,6 +12,7 @@ function FullNews({location}) {
     const [details, setDetails ] = useState("");
     const [loading, setLoading ] = useState(false);
     const [imageurl,setImageUrl] = useState("");
+    
     const searchParams = new URLSearchParams(location.search);
     let id = searchParams.get("id");
   
@@ -19,7 +20,7 @@ function FullNews({location}) {
         try {
           async function fetchprojectData() {
             // setLoading(true);
-            const {data } = await axios.get(`http://localhost:5000/api/v1/news/getSingleNews/${id}`);
+            const {data } = await axios.get(`${URL}api/v1/news/getSingleNews/${id}`);
             console.log(data)
             setTitle(data.title);
             setDetails(data.text);

@@ -3,6 +3,7 @@ import {LanguageContext} from "../context/language"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faQuestionCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import {URL} from "../Utils/TokenConfig"
 import axios from 'axios';
 
 const ContactUs = () => {
@@ -37,7 +38,7 @@ const ContactUs = () => {
         //  console.log(Proposal)
          try {
             setLoading(true);
-            const {data}  = await axios.post("http://localhost:5000/api/v1/product/createProduct",Proposal);
+            const {data}  = await axios.post(`${URL}api/v1/product/createProduct`,Proposal);
             if (data) {
                 setLoading(false);
                 window.location.href = "/";

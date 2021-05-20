@@ -4,7 +4,7 @@ import {useForm} from 'react-hook-form';
 import CircularProgress from '@material-ui/core/CircularProgress'
 import axios from 'axios';
 import {Helmet} from 'react-helmet';
-
+import {URL} from '../Utils/TokenConfig'
 const Login = () => {
     const {register, handleSubmit} = useForm();
     const [loading, setLoading ] = useState(false);
@@ -16,12 +16,12 @@ const Login = () => {
         loginData.password = data.password;
         try {
             setLoading(true);
-            const {data} = await axios.post("http://localhost:5000/api/v1/users/login",loginData);
+            const {data} = await axios.post(`${URL}api/v1/users/login`,loginData);
             if(data==="wrong"){
                 setLoading(false);
                 setWrongpass(true);
             }
-            if (data) {
+            if (data && data !== "wrong") {
                 setLoading(false);
                 localStorage.setItem("user", JSON.stringify(data));
                 localStorage.setItem("token", data.token);

@@ -13,6 +13,7 @@ import Container from '@material-ui/core/Container';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
 import {Helmet} from 'react-helmet'
+import {URL} from '../Utils/TokenConfig'
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(3),
@@ -62,13 +63,13 @@ function Signup({history}) {
 
       let error = false;
       error = (!email ? true : false);
-      error = (password!=confirm ? true : false);
-      error = (term!="agree" ? true : false)
+      error = (password!==confirm ? true : false);
+      error = (term!=="agree" ? true : false)
 
       try {
         if(error==false){
           setLoading(true);
-          const {data}  = await axios.post("http://localhost:5000/api/v1/users/signup",user);
+          const {data}  = await axios.post(`${URL}api/v1/users/signup`,user);
         if(data.token!=null){
           setLoading(false);
           history.push('/login')

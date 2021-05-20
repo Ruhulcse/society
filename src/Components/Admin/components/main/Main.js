@@ -1,26 +1,26 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "./Main.css";
 import profile from "../../assets/profile.png";
 import { config } from "../../../../Utils/TokenConfig";
-import axios from 'axios';
+import { URL } from "../../../../Utils/TokenConfig";
+import axios from "axios";
 
 const Main = () => {
+  const [userlist, SetUserList] = useState([]);
 
-  const [userlist,SetUserList] = useState([]);
-
-  const deleteHandler = async(id) =>{
-    console.log(id)
-    const result = await axios.delete(`http://localhost:5000/api/v1/users/deleteUser/${id}`);
-    if(result){
+  const deleteHandler = async (id) => {
+    console.log(id);
+    const result = await axios.delete(`${URL}api/v1/users/deleteUser/${id}`);
+    if (result) {
       window.location.reload();
     }
-  }
+  };
   useEffect(() => {
     try {
       async function fetchProposalData() {
-        const data  = await axios.get("http://localhost:5000/api/v1/users/Users",config);
+        const data = await axios.get(`${URL}api/v1/users/Users`, config);
         let users = data.data.Users;
-        console.log(users)
+        console.log(users);
         SetUserList(users);
       }
       fetchProposalData();
@@ -55,7 +55,10 @@ const Main = () => {
                         <button className="btn">
                           <i class="fas fa-pencil-alt"></i>
                         </button>
-                        <button className="btn" onClick={()=>deleteHandler(item._id)}>
+                        <button
+                          className="btn"
+                          onClick={() => deleteHandler(item._id)}
+                        >
                           <i class="fas fa-times"></i>
                         </button>
                       </div>
