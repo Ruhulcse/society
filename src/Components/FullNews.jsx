@@ -78,7 +78,7 @@ function FullNews({location}) {
                 {news&& <p className="container">Published Date: {news.createdAt.slice(0,9)}</p>}
                 <hr className="container"></hr>
                 <article class="main-article container">
-                <img src={`${URL}${imageurl}`}  className="img-fluid" style={{width:"100%",height:"100%"}} alt="not found"/>
+                <img src={`${imageurl}`}  className="img-fluid" style={{width:"100%",height:"100%"}} alt="not found"/>
                 <p className="pt-5">{parse(details)}</p>
                  </article>
               </div>

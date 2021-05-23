@@ -52,60 +52,7 @@ const LatestNews = () => {
         console.log(error);
       }
     }, []);
-    // const [latestNews, setLatestNews] = useState({
-    //     activeNews: null,
-    //     news: [
-    //     {
-    //         id: 1,
-    //         img: logo,
-    //         title: "Abdulmalek A-Society New Idea",
-    //         news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
-    //         news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
-    //     },
-    //     {
-    //         id: 2,
-    //         img: logo,
-    //         title: "Get to know more about us?",
-    //     news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
-    //         news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
-    //     },
-    //     {
-    //         id: 3,
-    //         img: logo,
-    //         title: "we will soon Lunch our system",
-    //         news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
-    //         news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
-    //     },
-    //     {
-    //         id: 4,
-    //         img: logo,
-    //         title: "we will soon Lunch our system",
-    //         news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
-    //         news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
-    //     },
-    //     {
-    //         id: 5,
-    //         img: logo,
-    //         title: "we will soon Lunch our system",
-    //         news_primary: "Our system is AsocietyOur system ir system is AsocietyOur system is AsocietyOur system is AsocietyOur system is AsocietyOur system is Asociety",
-    //         news_all: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi debitis maiores, dolor id eos velit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, odit.",
-    //     },
-    // ]
-    // })
 
-    // const [fullNews, setFullNews] = useState(true)
-
-
-        // function toggleActive(index){
-        //     setLatestNews({...latestNews, activeNews: latestNews.news[index]})
-        //     setFullNews(!fullNews)
-        // }
-
-        // function toggleActiveStyles(index){
-        //     if(latestNews.news[index] === latestNews.activeNews ){
-        //         return `active ${fullNews}`;
-        //     } else  return "none";
-        // }
 
         let settings = {
           
@@ -144,27 +91,7 @@ const LatestNews = () => {
             ]
         }
         return (
-            // <div className="newsSection">
-            //     <div className="container">
-            //         <h2 className="newsSection-title">{newsection.title}</h2>
-            //         <div className="news-container">
-            //             {
-            //                 latestNews.news.map((news,index )=> 
-            //                 <div className="col-md-4 news-card" key={index}>
-            //                     <img src={news.img} alt=""/>
-            //                     <div className="news-title">
-            //                         <h3>{news.title}</h3>
-            //                     </div>
-            //                     <div className="news-content">
-            //                         <p>{news.news_primary} <span className={toggleActiveStyles(index)} >{news.news_all}</span></p>
-            //                     <a href="/news" className="read-more">{newsection.button}<FontAwesomeIcon icon={faPlus} /></a>
-            //                     </div>
-            //                 </div>
-            //                 )
-            //             }
-            //         </div>
-            //     </div>
-            // </div> 
+
             <div className="newsSection">
              <div className="container">
               <div className="d-flex justify-content-center pt-5jjnn">
@@ -174,9 +101,8 @@ const LatestNews = () => {
              ):(
                 <Slider {...settings}>
                 {news.map((item,index)=>(
-                   <div className="col-md-10 news-card">
-                       
-                   <img src={`${URL}${item.image}`}  className="img-fluid" alt="not found"/>
+                   <div className="col-md-10 news-card">     
+                   <img src={`${item.image}`}  className="img-fluid" alt="not found"/>
                    <div className="news-title">
                      <h3>{item.title}</h3>
                    </div>
