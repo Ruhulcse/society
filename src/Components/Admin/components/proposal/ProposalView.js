@@ -4,6 +4,7 @@ import profile from "../../assets/person.jpeg";
 import axios from "axios";
 import { Stepper } from "@progress/kendo-react-layout";
 import { URL } from "../../../../Utils/TokenConfig";
+import DownloadLink from "react-download-link";
 const stepsWithLabel = [
   { label: "Step 1" },
   { label: "Step 2" },
@@ -40,6 +41,7 @@ const ProposalView = ({ location }) => {
         );
         setDetails(data.description);
         SetProposals(data);
+        console.log(data);
         if (data) {
           setLoading(false);
         }

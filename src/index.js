@@ -6,10 +6,13 @@ import "./assets/css/style.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/js/bootstrap.bundle";
-
+import { firebase } from "./lib/firebase";
+import { FirebaseContext } from "./context/firebase";
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <FirebaseContext.Provider value={{ firebase }}>
+      <App />
+    </FirebaseContext.Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

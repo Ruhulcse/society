@@ -1,4 +1,5 @@
 import React,{useContext,useState} from 'react'
+import {FirebaseContext} from "../context/firebase"
 import {LanguageContext} from "../context/language"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faQuestionCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
@@ -7,7 +8,9 @@ import {URL} from "../Utils/TokenConfig"
 import axios from 'axios';
 
 const ContactUs = () => {
-    const{english} = useContext(LanguageContext);
+
+     const{english} = useContext(LanguageContext);
+     const {firebase} = useContext(FirebaseContext);
      const [name, setName] = useState("");
      const [email, setEmail] = useState("");
      const [phone, setPhone] = useState("");
@@ -16,17 +19,40 @@ const ContactUs = () => {
      const [projecttitle, setProjectTitle] = useState("");
      const [image, setImage] = useState(null);
      const [loading, setLoading ] = useState(false);
-
-     const toBase64 = file => new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = error => reject(error);
-    });
+     const [erromessage, setErrormessage] = useState("");
+     const [attachment, setAttachment ] = useState("");
 
      const submitHandler = async (e) =>{
          e.preventDefault();
-         const base64Data= await toBase64(image);
+
+         let storageRef = firebase.storage().ref();
+
+         let metadata = {
+             contentType: "image/jpeg",
+         };
+
+        
+        let uploadTask = storageRef
+        .child("proposal/" + image.name)
+        .put(image, metadata);
+
+         await  uploadTask.on(
+            "state_changed", // or 'state_changed'
+            (snapshot) => {
+            let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log("Upload is " + progress + "% done");
+            },
+            (error) => {
+            setErrormessage(error.message);
+            },
+            () => {
+            setErrormessage("Added successfully!");
+            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                console.log(downloadURL);
+                setAttachment(downloadURL);
+            });
+            }
+        );
          const Proposal = {};
          Proposal.username = name;
          Proposal.userIdentifer = email;
@@ -34,14 +60,14 @@ const ContactUs = () => {
          Proposal.projectTitle = projecttitle;
          Proposal.projectType = service;
          Proposal.description = message;
-         Proposal.attachment = base64Data;
-        //  console.log(Proposal)
+         Proposal.attachment = attachment;
+         console.log(Proposal);
          try {
             setLoading(true);
             const {data}  = await axios.post(`${URL}api/v1/product/createProduct`,Proposal);
             if (data) {
                 setLoading(false);
-                window.location.href = "/";
+               // window.location.href = "/";
               }
           } catch (error) {
             console.log(error);

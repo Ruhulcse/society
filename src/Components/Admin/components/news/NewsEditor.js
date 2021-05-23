@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { FirebaseContext } from "../../../../context/firebase";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import "./news.css";
@@ -7,27 +8,21 @@ import { URL } from "../../../../Utils/TokenConfig";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 function NewsEditor() {
+  const { firebase } = useContext(FirebaseContext);
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
   const [videourl, setVideoUrl] = useState("");
   const [imageurl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [attachement, setAttachment] = useState("");
+  const [errormessage, setErrormessage] = useState("");
 
-  const toBase64 = (file) =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    const base64Data = await toBase64(imageurl);
+  const uploadNews = async (e) => {
     const NewsData = {};
     NewsData.title = title;
     NewsData.videourl = videourl;
     NewsData.text = text;
-    NewsData.image = base64Data;
+    NewsData.image = attachement;
     console.log(NewsData);
 
     try {
@@ -35,11 +30,43 @@ function NewsEditor() {
       const data = await axios.post(`${URL}api/v1/news/createNews`, NewsData);
       if (data) {
         setLoading(false);
-        window.location.href = "/admin";
+        //window.location.href = "/admin";
       }
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    let storageRef = firebase.storage().ref();
+
+    let metadata = {
+      contentType: "image/jpeg",
+    };
+
+    let uploadTask = storageRef
+      .child("news/" + imageurl.name)
+      .put(imageurl, metadata);
+
+    uploadTask.on(
+      "state_changed", // or 'state_changed'
+      (snapshot) => {
+        let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+      },
+      (error) => {
+        setErrormessage(error.message);
+      },
+      () => {
+        setErrormessage("Added successfully!");
+        uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+          console.log(downloadURL);
+          setAttachment(downloadURL);
+          uploadNews();
+        });
+      }
+    );
   };
   return (
     <main>
