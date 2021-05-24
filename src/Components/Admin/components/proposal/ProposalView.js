@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Proposal.css";
 import profile from "../../assets/person.jpeg";
 import axios from "axios";
 import { Stepper } from "@progress/kendo-react-layout";
 import { URL } from "../../../../Utils/TokenConfig";
-import DownloadLink from "react-download-link";
+import { FirebaseContext } from "../../../../context/firebase";
+
 const stepsWithLabel = [
   { label: "Step 1" },
   { label: "Step 2" },
@@ -13,6 +14,7 @@ const stepsWithLabel = [
 ];
 
 const ProposalView = ({ location }) => {
+  const { firebase } = useContext(FirebaseContext);
   const [value, setValue] = useState(1);
   const [details, setDetails] = useState("");
   const [proposals, SetProposals] = useState([]);
@@ -31,7 +33,12 @@ const ProposalView = ({ location }) => {
   const handleChange = (e) => {
     setValue(e.value);
   };
-
+  const download = (filePath) => {
+    var link = document.createElement("a");
+    link.href = filePath;
+    link.download = filePath.substr(filePath.lastIndexOf("/") + 1);
+    link.click();
+  };
   useEffect(() => {
     try {
       async function fetchProposalData() {
@@ -45,8 +52,6 @@ const ProposalView = ({ location }) => {
         if (data) {
           setLoading(false);
         }
-        // let proposal = data.data.products.mAllProduct;
-        // console.log(proposal)
       }
       fetchProposalData();
     } catch (error) {
@@ -59,7 +64,16 @@ const ProposalView = ({ location }) => {
         <div>
           <div className="row">
             <div className="col-md-10 bg-white">
-              <h2 className="pl-2">Details</h2>
+              <section>
+                <h2 className="pl-2">Details</h2>
+                <button
+                  className="btn btn-success"
+                  onClick={() => download(proposals.attachment)}
+                >
+                  <i className="fa fa-download" />
+                  download
+                </button>
+              </section>
               <p className="pl-2">{details}</p>
               <Stepper
                 className="pt-5 pb-5"

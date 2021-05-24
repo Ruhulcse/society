@@ -22,7 +22,30 @@ const ContactUs = () => {
      const [erromessage, setErrormessage] = useState("");
      const [attachment, setAttachment ] = useState("");
 
-     const submitHandler = async (e) =>{
+     let newsimagelink;
+
+     const uploadProposal = async() =>{
+        const Proposal = {};
+        Proposal.username = name;
+        Proposal.userIdentifer = email;
+        Proposal.phoneNumber = phone;
+        Proposal.projectTitle = projecttitle;
+        Proposal.projectType = service;
+        Proposal.description = message;
+        Proposal.attachment = newsimagelink;
+        try {
+           setLoading(true);
+           const {data}  = await axios.post(`${URL}api/v1/product/createProduct`,Proposal);
+           if (data) {
+               setLoading(false);
+              window.location.href = "/";
+             }
+         } catch (error) {
+           console.log(error);
+         }
+     }
+
+     const submitHandler = (e) =>{
          e.preventDefault();
 
          let storageRef = firebase.storage().ref();  
@@ -36,7 +59,7 @@ const ContactUs = () => {
         .child("proposal/" + image.name)
         .put(image, metadata);
 
-         await  uploadTask.on(
+           uploadTask.on(
             "state_changed", // or 'state_changed'
             (snapshot) => {
             let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -48,30 +71,11 @@ const ContactUs = () => {
             () => {
             setErrormessage("Added successfully!");
             uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-                console.log(downloadURL);
-                setAttachment(downloadURL);
+                newsimagelink = downloadURL;
+                uploadProposal();
             });
             }
         );
-         const Proposal = {};
-         Proposal.username = name;
-         Proposal.userIdentifer = email;
-         Proposal.phoneNumber = phone;
-         Proposal.projectTitle = projecttitle;
-         Proposal.projectType = service;
-         Proposal.description = message;
-         Proposal.attachment = attachment;
-         console.log(Proposal);
-         try {
-            setLoading(true);
-            const {data}  = await axios.post(`${URL}api/v1/product/createProduct`,Proposal);
-            if (data) {
-                setLoading(false);
-               // window.location.href = "/";
-              }
-          } catch (error) {
-            console.log(error);
-          }
      }
     return (
         <div className="container" id="contact">
