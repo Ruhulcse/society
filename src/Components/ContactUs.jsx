@@ -25,7 +25,7 @@ const ContactUs = () => {
      const submitHandler = async (e) =>{
          e.preventDefault();
 
-         let storageRef = firebase.storage().ref();
+         let storageRef = firebase.storage().ref();  
 
          let metadata = {
              contentType: "image/jpeg",

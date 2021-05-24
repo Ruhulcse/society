@@ -30,6 +30,7 @@ function OurProject() {
           setLoading(true);
           const {data } = await axios.get(`${URL}api/v1/projects/getAllProject`,);
           let ourprojects = data.filter(item => item.partnerproject===false);
+          ourprojects.reverse();
           setProjects(ourprojects);
           if(data){
             setLoading(false);
@@ -87,7 +88,7 @@ function OurProject() {
             <Slider {...settings}>
             {ourprojects.map((item)=>(
                <div className="col-md-10  pt-5 " >
-               <img src={`${URL}${item.imageurl}`}  className="img-fluid" style={{width:"100%",height:"247px"}} alt="not found"/>
+               <img src={item.imageurl}   className="img-fluid" style={{width:"100%",height:"247px"}} alt="not found"/>
                <div className="firstpic">
                <h4 className="text-center">{item.title}</h4>
                <a href={item.projecturl}  className="firstlink" target="blank">Check Project&#8811;</a>

@@ -1,35 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { FirebaseContext } from "../../../../context/firebase";
 import "./project.css";
 import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { URL } from "../../../../Utils/TokenConfig";
+
 function ProjectMain() {
+  const { firebase } = useContext(FirebaseContext);
   const [title, SetTitle] = useState("");
   const [projecturl, setProjectUrl] = useState("");
   const [imageurl, setImageUrl] = useState(null);
   const [partnerproject, setPartnerProject] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errormessage, setErrormessage] = useState("");
 
   //for changing the check status
   const handleClick = () => setPartnerProject(!partnerproject);
-
-  //making image as base64 buffer for uploading to server
-  const toBase64 = (file) =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
-
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    const base64Data = imageurl ? await toBase64(imageurl) : "null";
+  let imagelink;
+  //uploading final data to mongodb
+  const uploadProjects = async (e) => {
     const ProjectData = {};
     ProjectData.title = title;
     ProjectData.projecturl = projecturl;
     ProjectData.partnerproject = partnerproject;
-    ProjectData.imageurl = base64Data;
+    ProjectData.imageurl = imagelink;
     try {
       setLoading(true);
       const data = await axios.post(
@@ -46,11 +40,44 @@ function ProjectMain() {
     }
   };
 
+  //generating image link after saving in firbase
+  const submitHandler = (e) => {
+    e.preventDefault();
+    let storageRef = firebase.storage().ref();
+
+    let metadata = {
+      contentType: "image/jpeg",
+    };
+
+    let uploadTask = storageRef
+      .child("projects/" + imageurl.name)
+      .put(imageurl, metadata);
+
+    uploadTask.on(
+      "state_changed", // or 'state_changed'
+      (snapshot) => {
+        let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+      },
+      (error) => {
+        setErrormessage(error.message);
+      },
+      () => {
+        setErrormessage("Added successfully!");
+        uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+          imagelink = downloadURL;
+          uploadProjects();
+        });
+      }
+    );
+  };
+
   return (
     <main>
       <div className="main__container">
         <div className="row">
           <div className="col-md-12">
+            <p>{errormessage}</p>
             {loading && <CircularProgress />}
             <div className="card mt-5 mr-2 ml-2">
               <div className="card-body ml-2 mr-2">
