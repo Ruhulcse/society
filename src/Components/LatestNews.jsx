@@ -43,6 +43,7 @@ const LatestNews = () => {
           const {data } = await axios.get(`${URL}api/v1/news/getAllNews`,);
           console.log(data)
           if(data){
+            data.reverse();
             setNews(data)
             setLoading(false);
           }
@@ -107,7 +108,7 @@ const LatestNews = () => {
                      <h3>{item.title}</h3>
                    </div>
                    <div className="news-content">
-                        <p>{parse(item.text.substring(0,100)+'...')}</p>
+                        <p>{parse(item.text.substring(0,110)+'...')}</p>
                         <a href={`/news/?id=${item._id}`} className="read-more"  target="blank">{newsection.button}<FontAwesomeIcon icon={faPlus}/></a>
                     </div>
                </div>

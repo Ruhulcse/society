@@ -8,7 +8,7 @@ function LatestProject() {
     const [ourProject,setOurProject] = useState(true);
     const project = english?{
         title: "Our Latest Project",
-        description: "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah",
+        description: "We A-Society have done some awesome projects",
         button1: "Our Projects",
         button2: "Partnered projects"
 

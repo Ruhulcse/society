@@ -17,12 +17,14 @@ function NewsEditor() {
   const [attachement, setAttachment] = useState("");
   const [errormessage, setErrormessage] = useState("");
 
+  let newsImage;
+
   const uploadNews = async (e) => {
     const NewsData = {};
     NewsData.title = title;
     NewsData.videourl = videourl;
     NewsData.text = text;
-    NewsData.image = attachement;
+    NewsData.image = newsImage;
     console.log(NewsData);
 
     try {
@@ -30,7 +32,7 @@ function NewsEditor() {
       const data = await axios.post(`${URL}api/v1/news/createNews`, NewsData);
       if (data) {
         setLoading(false);
-        //window.location.href = "/admin";
+        window.location.href = "/admin";
       }
     } catch (error) {
       console.log(error);
@@ -59,10 +61,10 @@ function NewsEditor() {
         setErrormessage(error.message);
       },
       () => {
-        setErrormessage("Added successfully!");
+        setErrormessage("News Added successfully!");
         uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
           console.log(downloadURL);
-          setAttachment(downloadURL);
+          newsImage = downloadURL;
           uploadNews();
         });
       }
@@ -76,6 +78,7 @@ function NewsEditor() {
             <div className="card mt-5">
               <div className="card-body ">
                 <h1>Edit Post</h1>
+                <p>{errormessage}</p>
                 {loading ? (
                   <CircularProgress />
                 ) : (
