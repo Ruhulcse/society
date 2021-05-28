@@ -33,11 +33,22 @@ const ProposalView = ({ location }) => {
   const handleChange = (e) => {
     setValue(e.value);
   };
-  const download = (filePath) => {
-    var link = document.createElement("a");
-    link.href = filePath;
-    link.download = filePath.substr(filePath.lastIndexOf("/") + 1);
-    link.click();
+  const download = (e) => {
+    e.preventDefault();
+  return fetch(`https://firebasestorage.googleapis.com/v0/b/fir-auth-e1a3b.appspot.com/o/proposal%2F_118596357_hi067466326.jpg?alt=media&token=fb18bc95-3229-4912-a4db-8a264971f6ba`, {
+      mode: 'no-cors'
+    })
+    .then(function(response) {
+      return response.blob();
+    }).then(function(blob) {
+      console.log(blob)
+      const a = document.createElement("a");
+      // a.href = URL.createObjectURL(blob);
+      a.download = "proposal file.png";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
   };
   useEffect(() => {
     try {
@@ -66,13 +77,8 @@ const ProposalView = ({ location }) => {
             <div className="col-md-10 bg-white">
               <section>
                 <h2 className="pl-2">Details</h2>
-                <button
-                  className="btn btn-success"
-                  onClick={() => download(proposals.attachment)}
-                >
-                  <i className="fa fa-download" />
-                  download
-                </button>
+                {/* <a href="#" class="download-image" onClick={download}>Download</a> */}
+                <a href={proposals.attachment} class="btn btn-success" download>Download</a>
               </section>
               <p className="pl-2">{details}</p>
               <Stepper
