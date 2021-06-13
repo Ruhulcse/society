@@ -59,44 +59,44 @@ const Footer = () => {
     return (
        <div className="footer-bg">
             <div className="footer">
-            <div className="footerLeft">
-                <div className="xyz">
-                    <img className="img-fluid" src={lg} alt="logo"/>
-                    <p className="abouttext">
-                    {foot.brand}
-                    </p >
-                    <small>&copy; {new Date().getFullYear()} A-SOCITY</small>
-                </div>
-            
-                <div className="company">
-                    <p className="abouttext">{english?"Company":"شركة"}</p>
-                    {company.map((company) => <a href={company.link}>{company.prop}</a>)}
-                </div>
+                <div className="footerLeft">
+                    <div className="xyz">
+                        <img className="img-fluid" src={lg} alt="logo"/>
+                        <p className="abouttext">
+                        {foot.brand}
+                        </p >
+                        <small>&copy; {new Date().getFullYear()} A-SOCITY</small>
+                    </div>
+                
+                    <div className="company">
+                        <p className="abouttext">{english?"Company":"شركة"}</p>
+                        {company.map((company) => <a href={company.link}>{company.prop}</a>)}
+                    </div>
 
-                <div className="support">
-                    <p className="abouttext" >{english?"Support":"الدعم"}</p>
-                    {support.map((support) => <a href={support.link}>{support.prop}</a>)}
+                    <div className="support">
+                        <p className="abouttext" >{english?"Support":"الدعم"}</p>
+                        {support.map((support) => <a href={support.link}>{support.prop}</a>)}
+                    </div>
+                
+                    <div className="contact">
+                        <p  className="abouttext">{english?"Contact":"اتصال"}</p>
+                        <p className="address">{english?"Parkhill Residence, Bukit Jalil":"باركهيل ريزيدنس ، بوكيت جليل"} <br/> +60-18-1212-123 <br/> {english?"Email: A-Society@mail.com":"البريد الإلكتروني: A-Society@mail.com"}</p>
+                    </div>
                 </div>
-            
-                <div className="contact">
-                    <p  className="abouttext">{english?"Contact":"اتصال"}</p>
-                    <p className="address">{english?"Parkhill Residence, Bukit Jalil":"باركهيل ريزيدنس ، بوكيت جليل"} <br/> +60-18-1212-123 <br/> {english?"Email: A-Society@mail.com":"البريد الإلكتروني: A-Society@mail.com"}</p>
+                <div className="footerRight">
+                    <h5>{english?"Subscribe":"الإشتراك"}</h5>
+                    <p>{english?"Get offers and stay up-to-date":"احصل على العروض وابقَ على اطلاع"}</p>
+                    <form>
+                        <input type="email" placeholder={english?"Email Address":"عنوان البريد الإلكتروني"}/>
+                        <input type="submit" value={english?"Subscribe":"الإشتراك"}/> 
+                    </form>
+                    <div className="link">
+                        {social.map((social) => <a className="social-link" href={social.link}><img src={social.img} alt=""/></a>)}
+                        
+                        {appStore.map((appStore) => <a className="app-link" href={appStore.link}><img src={appStore.img} alt=""/></a>)}  
+                    </div>
                 </div>
             </div>
-            <div className="footerRight">
-                <h5>{english?"Subscribe":"الإشتراك"}</h5>
-                <p>{english?"Get offers and stay up-to-date":"احصل على العروض وابقَ على اطلاع"}</p>
-                <form>
-                    <input type="email" placeholder={english?"Email Address":"عنوان البريد الإلكتروني"}/>
-                    <input type="submit" value={english?"Subscribe":"الإشتراك"}/> 
-                </form>
-                <div className="link">
-                    {social.map((social) => <a className="social-link" href={social.link}><img src={social.img} alt=""/></a>)}
-                    
-                    {appStore.map((appStore) => <a className="app-link" href={appStore.link}><img src={appStore.img} alt=""/></a>)}  
-                </div>
-            </div>
-        </div>
        </div>
     );
 };
