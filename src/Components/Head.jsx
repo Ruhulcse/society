@@ -34,11 +34,8 @@ function Head() {
 
     };
    
-   const  onChangeOption=(e)=>{
-        if (e.detail === 0){
-            let Language = e.target.value;
-            Language==='E'?en():ar();
-        }
+   const  onChangeOption=(Language)=>{
+    Language==='E'?en():ar();
     }
 
     return (
@@ -68,10 +65,16 @@ function Head() {
                     <div className="col-md-3 navbar-nav sidenav ml-auto">
                         <a href="/signup" className="nav-item nav-link"  ><section className="naviteml">{nav.signin}</section></a>
                         <a href="/login" className="nav-item nav-link border" ><section className="naviteml">{nav.signup}</section></a>
-                        <select className="opt" name="select1" onClick={onChangeOption}>
+                        {/* <select className="opt" name="select1" onClick={onChangeOption}>
                         <option value='E'>English</option>
                         <option value='A'>عربى</option>
-                        </select>
+                        </select> */}
+                        <button onClick={()=>onChangeOption('E')} >
+                            English
+                        </button>
+                        <button onClick={()=>onChangeOption('A')} >
+                            Arabic
+                        </button>
                     </div>
                 </div>
              </nav>
