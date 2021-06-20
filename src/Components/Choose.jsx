@@ -25,18 +25,18 @@ function Choose() {
                     <div className="row pt-5">
                         <div className="col-md-6">
                             <div className="row">
-                                <div className="col-md-3 pt-4 pl-5">
+                                <div className="col-md-3 pt-4 pl-5 imagediv">
                                     <img src={clock}  className="img-fluid" alt="not found"/>
                                 </div>
                                 <div className="col-md-9">
-                                    <h3 className="txtc">{english?"Fast Process":"عملية سريعة"}</h3>
+                                    <h3 className="txtc" >{english?"Fast Process":"عملية سريعة"}</h3>
                                     <p className="txtc">{english?"The process takes minutes and you get instant quotes online":"تستغرق العملية دقائق وستحصل على عروض أسعار فورية عبر الإنترنت"}</p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="row">
-                                <div className="col-md-3 pt-4 pl-5">
+                                <div className="col-md-3 pt-4 pl-5 imagediv">
                                   <img src={research}  className="img-fluid" alt="not found"/>
                                 </div>
                                 <div className="col-md-9">
@@ -49,7 +49,7 @@ function Choose() {
                     <div className="row pt-5">
                         <div className="col-md-6">
                             <div className="row">
-                                <div className="col-md-3 pt-4 pl-5">
+                                <div className="col-md-3 pt-4 pl-5 imagediv">
                                     <img src={surface}  className="img-fluid" alt="not found"/>
                                 </div>
                                 <div className="col-md-9">
@@ -60,7 +60,7 @@ function Choose() {
                         </div>
                         <div className="col-md-6">
                             <div className="row">
-                                <div className="col-md-3 pt-4 pl-5">
+                                <div className="col-md-3 pt-4 pl-5 imagediv">
                                   <img src={headset}  className="img-fluid" alt="not found"/>
                                 </div>
                                 <div className="col-md-9">
@@ -73,7 +73,7 @@ function Choose() {
                     <div className="row pt-5">
                         <div className="col-md-6">
                             <div className="row">
-                                <div className="col-md-3 pt-4 pl-5">
+                                <div className="col-md-3 pt-4 pl-5 imagediv">
                                     <img src={awareness}  className="img-fluid" alt="not found"/>
                                 </div>
                                 <div className="col-md-9">
@@ -84,7 +84,7 @@ function Choose() {
                         </div>
                         <div className="col-md-6">
                             <div className="row">
-                                <div className="col-md-3 pt-4 pl-5">
+                                <div className="col-md-3 pt-4 pl-5 imagediv">
                                   <img src={emoji}  className="img-fluid" alt="not found"/>
                                 </div>
                                 <div className="col-md-9">

@@ -292,6 +292,10 @@
 		height: 100%;
 		width: 100%;
 	}
+	.txtc {
+		color: white;
+		text-align: center;
+	}
 }
 @media screen and (max-width: 1024px) {
 	.img {
@@ -303,6 +307,11 @@
 	.img {
 		height: 100%;
 		width: 50%;
+	}
+	.txtc {
+		color: white;
+		text-align: center;
+
 	}
 }
 @media screen and (max-width: 540px) {
@@ -961,4 +970,21 @@ label.MuiFormControlLabel-root {
 
 .ck-editor__editable_inline {
 	min-height: 500px;
+}
+
+/*latest change for why chose section*/
+
+
+
+@media screen and (max-width: 768px) {
+	.imagediv{
+		margin-left: 21%;
+		padding-bottom: 4%;
+	}
+}
+@media screen and (max-width: 540px) {
+	.imagediv{
+		margin-left: 27%;
+		padding-bottom: 4%;
+	}
 }
