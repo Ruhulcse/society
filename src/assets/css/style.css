@@ -988,3 +988,13 @@ label.MuiFormControlLabel-root {
 		padding-bottom: 4%;
 	}
 }
+@media screen and (max-width: 768px) {
+	.buttondiv{
+		margin-right: 72%;
+	}
+}
+@media screen and (max-width: 540px) {
+	.buttondiv{
+		margin-right: 72%;
+	}
+}

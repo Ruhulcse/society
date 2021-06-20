@@ -69,12 +69,11 @@ function Head() {
                         <option value='E'>English</option>
                         <option value='A'>عربى</option>
                         </select> */}
-                        <button onClick={()=>onChangeOption('E')} >
+                        {!english?<button onClick={()=>onChangeOption('E')} className="btn btn-success buttondiv">
                             English
-                        </button>
-                        <button onClick={()=>onChangeOption('A')} >
+                        </button>:<button onClick={()=>onChangeOption('A')} className="btn btn-danger buttondiv">
                             Arabic
-                        </button>
+                        </button> }
                     </div>
                 </div>
              </nav>
