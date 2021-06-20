@@ -82,7 +82,8 @@ function OurProject() {
     return (
         <div className="container-fluid">
          {loading?( <div className=" pt-2">
-         <LinearProgress />
+         {/* <LinearProgress /> */}
+         <p className="text-center">no data found</p>
          </div>
          ):(
             <Slider {...settings}>

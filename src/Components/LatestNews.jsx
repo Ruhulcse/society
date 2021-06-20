@@ -98,7 +98,7 @@ const LatestNews = () => {
               <div className="d-flex justify-content-center pt-5jjnn">
               <h1 className="justify-content-center">Latest News</h1>
               </div>
-             {loading?( <CircularProgress/>
+             {loading?( <p className="text-center">no data found</p>
              ):(
                 <Slider {...settings}>
                 {news.map((item,index)=>(
