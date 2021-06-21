@@ -30,12 +30,12 @@ function Head() {
         do: "هل لديك فكرة..",
         but: "لكن لا يعرف كيف يبنيه",
         learn: "يتعلم أكثر"
-
-
     };
    
    const  onChangeOption=(Language)=>{
     Language==='E'?en():ar();
+    let language = Language==='E'?'true':'false';
+    localStorage.setItem('english', language);
     }
 
     return (

@@ -40,7 +40,35 @@ function Signup({history}) {
   const classes = useStyles();
 
   const {register, handleSubmit} = useForm();
-
+  let english = localStorage.getItem('english');
+  let content = english ==="true" ? {
+    head: "Sign up",
+    message: "Please complete to sign up",
+    Fn: "First Name",
+    Ln: "Last Name",
+    user: "Username",
+    email: "Email Address",
+    pass: "Password",
+    conp: "Confirm Password",
+    term: "I agree with terms and conditions",
+    create: "CREATE",
+    ald: "Already have an account? Sign in",
+    tp: "Terms of use . Privacy policy"
+  }:
+  {
+    head: "اشتراك",
+    message: "الرجاء إكمال التسجيل",
+    Fn: "الاسم الأول",
+    Ln: "الكنية",
+    user: "اسم المستخدم",
+    email: "عنوان البريد الإلكتروني",
+    pass: "كلمه السر",
+    conp: "تأكيد كلمة المرور",
+    term: "وأنا أتفق مع شروط وأحكام",
+    create: "خلق",
+    ald: "هل لديك حساب؟ تسجيل الدخول",
+    tp: "تعليمات الاستخدام . سياسة خاصة"
+  }
   var isValidEmail=(email)=>{
     var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
    if(email.match(mailformat)){
@@ -90,10 +118,11 @@ function Signup({history}) {
       <div className={classes.paper}>
         
         <Typography component="h1" variant="h4">
-          Sign up
+          {content.head}
+          {console.log(english)}
         </Typography>
         <Typography className="pt-3 text-white" component="p" variant="p">
-          {loading?<CircularProgress />:(<p>Please complete to sign up</p>)}
+          {loading?<CircularProgress />:(<p>{content.message}</p>)}
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2}>
@@ -104,7 +133,7 @@ function Signup({history}) {
                 required
                 fullWidth
                 id="firstName"
-                label="First Name"
+                label={content.Fn}
                 autoFocus
                 inputRef={register}
               />
@@ -114,7 +143,7 @@ function Signup({history}) {
                 required
                 fullWidth
                 id="lastName"
-                label="Last Name"
+                label={content.Ln}
                 name="name.lastName"
                 autoComplete="lname"
                 inputRef={register}
@@ -126,7 +155,7 @@ function Signup({history}) {
                 required
                 fullWidth
                 id="username"
-                label="Username"
+                label={content.user}
                 name="username"
                 autoComplete="username"
                 inputRef={register}
@@ -137,7 +166,7 @@ function Signup({history}) {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label={content.email}
                 name="email"
                 autoComplete="email"
                 value={email}
@@ -150,7 +179,7 @@ function Signup({history}) {
                 required
                 fullWidth
                 name="password"
-                label="Password "
+                label={content.pass}
                 placeholder="Minium 8 character"
                 type="password"
                 id="password"
@@ -164,7 +193,7 @@ function Signup({history}) {
                 required
                 fullWidth
                 name="confirm_password"
-                label="Confirm Password"
+                label={content.conp}
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -176,7 +205,7 @@ function Signup({history}) {
             {confirm.length>0&&password.length>0&&(password!==confirm)&&( <p  style={{color: "#fbff00"}}>Password is not matched</p>)}
               <FormControlLabel
                 control={<Checkbox name="tc" value="agree" color="primary" inputRef={register} />}
-                label="I agree with terms and conditions."
+                label={content.term}
               />
             </Grid>
           </Grid>
@@ -187,7 +216,7 @@ function Signup({history}) {
             type="submit"
             className={`${classes.submit} create-btn`}
           >
-            Create
+            {content.create}
           </Button>
             </Grid>
           </Grid>
@@ -195,7 +224,7 @@ function Signup({history}) {
           <Grid container justify="center">
             <Grid item>
               <Link className="text-white" href="/login" variant="body2">
-                Already have an account? Sign in
+              {content.ald}
               </Link>
             </Grid>
           </Grid>
@@ -204,7 +233,7 @@ function Signup({history}) {
             <Grid item className="pt-2 pb-4">
               <Link className="text-white" href="#" variant="body2">
                 <small>
-                    Terms  of use . Privacy policy
+                   {content.tp}
                 </small>
               </Link>
             </Grid>

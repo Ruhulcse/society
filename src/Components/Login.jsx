@@ -9,6 +9,25 @@ const Login = () => {
     const {register, handleSubmit} = useForm();
     const [loading, setLoading ] = useState(false);
     const [worngpass, setWrongpass] = useState(false);
+    let english = localStorage.getItem('english');
+    let content = english ==="true" ? {
+      head: "User Login",
+      email: "Email Address",
+      pass: "Password",
+      term: "Remember me",
+      forget: "Forgot password?",
+      log: "Login",
+      sign: "signup"
+    }:
+    {
+        head: "تسجيل دخول المستخدم",
+        email: "عنوان البريد الإلكتروني",
+        pass: "كلمه السر",
+        term: "تذكرنى",
+        forget: "هل نسيت كلمة السر؟",
+        log: "تسجيل الدخول",
+        sign: "اشتراك"
+    }
     const onSubmit = async (data) => {
         // console.log(data);
         const loginData = {};
@@ -38,24 +57,24 @@ const Login = () => {
               <title>Asociety || Login</title>
             </Helmet>
             <div className="login-form">
-                <h1 className="title">{loading?<CircularProgress />:<p>User Login</p>}</h1>
+                <h1 className="title">{loading?<CircularProgress />:<p>{content.head}</p>}</h1>
                 {worngpass&&(<p>invalid username or password</p>)}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="email-pass">
-                        <input type="email" name="email" placeholder="Email Address" ref={register}/>
-                        <input type="password" name="password" placeholder="Password" ref={register}/> 
+                        <input type="email" name="email" placeholder={content.email} ref={register}/>
+                        <input type="password" name="password" placeholder={content.pass} ref={register}/> 
                     </div>
                     <div className="remember">
                         <FormControlLabel
                             control={<Checkbox name="remember-password" value="agree" inputRef={register} />}
-                            label="Remember me."
+                            label={content.term}
                         />
-                        <a href="!#"> Forgot password?</a>
+                        <a href="!#"> {content.forget}</a>
                     </div>
 
                     <div className="log_sign_in-btn">
-                        <button type="submit" className="login-btn">Login</button>
-                        <a className="signin-btn" href="/signup">Signup?</a>
+                        <button type="submit" className="login-btn">{content.log}</button>
+                        <a className="signin-btn" href="/signup">{content.sign}</a>
                     </div>
                 </form>
             </div>
