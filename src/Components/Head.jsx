@@ -1,6 +1,6 @@
 import React ,{useContext}from 'react'
 import {LanguageContext} from "../context/language"
-import logo from "../assets/img/newlogo.png";
+import logo from "../assets/img/updatedlogo.png";
 function Head() {
     const{english,en,ar} = useContext(LanguageContext);
 
@@ -9,8 +9,8 @@ function Head() {
         service: "SERVICES",
         project: "PROJECTS",
         contact: "CONTACT US",
-        signin: "Sign up",
-        signup: "Sign in",
+        signin: "Sign-up",
+        signup: "Sign-in",
         you: "You",
         think: "Think It",
         we: "We Build It",
@@ -45,7 +45,7 @@ function Head() {
          <div className="row pt-5">
              <div className="col-md-3">
                 <div>
-                    <a className="navbar-brand" style={{paddingLeft:"32%",paddingTop:"4%"}} href="/">
+                    <a className="navbar-brand smalldevice" href="/">
                         <img src={logo}  className="img-fluid"  alt="not found" />
                     </a>
                 </div>

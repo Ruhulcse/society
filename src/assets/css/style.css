@@ -998,3 +998,13 @@ label.MuiFormControlLabel-root {
 		margin-right: 72%;
 	}
 }
+.smalldevice{
+	padding-left: 32%;
+	padding-top: 4%;
+}
+@media screen and (max-width: 767px) {
+	.smalldevice{
+		padding-left: 0%;
+		padding-top: 4%;
+	}
+}
