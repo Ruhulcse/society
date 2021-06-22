@@ -911,6 +911,20 @@ label.MuiFormControlLabel-root {
 		padding: 10px 10px 10px 30px;
 	}
 }
+@media (max-width: 767px){
+.login-page .login-form .log_sign_in-btn .login-btn,
+.login-page .login-form .log_sign_in-btn .signin-btn {
+	background: #f73c45;
+	border-radius: 48px;
+	box-shadow: 1px 1px 7px #f73c45;
+	color: #fff;
+	font-size: 15px;
+	padding: 16px 22px;
+	border: solid #f83c45 1px;
+	text-decoration: none;
+	transition: 0.3s;
+}
+}
 /*.latest project*/
 .sc {
 	color: #000;
